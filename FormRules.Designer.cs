@@ -57,14 +57,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // LB_GoBack
             // 
             this.LB_GoBack.AutoSize = true;
-            this.LB_GoBack.Location = new System.Drawing.Point(396, 360);
+            this.LB_GoBack.Location = new System.Drawing.Point(356, 317);
             this.LB_GoBack.Name = "LB_GoBack";
             this.LB_GoBack.Size = new System.Drawing.Size(58, 16);
             this.LB_GoBack.TabIndex = 2;
