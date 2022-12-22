@@ -22,5 +22,12 @@ namespace beyblade
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
             MenuStrip.BackColor = Color.Transparent;
         }
+
+        private void LB_GoBack_Click(object sender, EventArgs e)
+        {
+            FormNiveis formMain = new FormNiveis();
+            formMain.Show();
+            this.Hide();
+        }
     }
 }

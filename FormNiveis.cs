@@ -12,6 +12,7 @@ namespace beyblade
 {
     public partial class FormNiveis : Form
     {
+        private NewDataSet _loginData;
         public FormNiveis()
         {
             InitializeComponent();
@@ -21,6 +22,18 @@ namespace beyblade
         {
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
             MenuStrip.BackColor = Color.Transparent;
+        }
+
+        private void LB_NIVEL_01_Click(object sender, EventArgs e)
+        {
+            float massa = 10;
+            float aceleracao = 10;
+            float atrito = 10;
+            float velocidade = 10;
+
+            FormNiveis formNiveis = new FormNiveis();
+            formNiveis.Show();
+            this.Hide();
         }
     }
 }
