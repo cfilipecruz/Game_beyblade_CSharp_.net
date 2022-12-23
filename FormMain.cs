@@ -35,15 +35,17 @@ namespace beyblade
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LB_Rules_Click(object sender, EventArgs e)
         {
             FormRules formRules = new FormRules();
             formRules.Show();
+            this.Hide();
+        }
+
+        private void LB_Play_Click(object sender, EventArgs e)
+        {
+            FormNiveis FormNiveis = new FormNiveis();
+            FormNiveis.Show();
             this.Hide();
         }
     }

@@ -48,7 +48,8 @@
             this.fileToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1038, 43);
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MenuStrip.Size = new System.Drawing.Size(778, 36);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             this.MenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip_ItemClicked);
@@ -58,13 +59,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(90, 39);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 40);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -74,9 +75,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_MainMenu_Dark.BackColor = System.Drawing.Color.Transparent;
             this.Label_MainMenu_Dark.Font = new System.Drawing.Font("Silom", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_MainMenu_Dark.Location = new System.Drawing.Point(186, 139);
+            this.Label_MainMenu_Dark.Location = new System.Drawing.Point(140, 113);
+            this.Label_MainMenu_Dark.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label_MainMenu_Dark.Name = "Label_MainMenu_Dark";
-            this.Label_MainMenu_Dark.Size = new System.Drawing.Size(730, 313);
+            this.Label_MainMenu_Dark.Size = new System.Drawing.Size(548, 254);
             this.Label_MainMenu_Dark.TabIndex = 2;
             this.Label_MainMenu_Dark.Text = "BeyBlade";
             this.Label_MainMenu_Dark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,9 +89,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Silom", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 139);
+            this.label1.Location = new System.Drawing.Point(140, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(730, 313);
+            this.label1.Size = new System.Drawing.Size(548, 254);
             this.label1.TabIndex = 3;
             this.label1.Text = "BeyBlade";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,30 +100,32 @@
             // LB_Play
             // 
             this.LB_Play.AutoSize = true;
-            this.LB_Play.Location = new System.Drawing.Point(496, 490);
+            this.LB_Play.Location = new System.Drawing.Point(372, 398);
+            this.LB_Play.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Play.Name = "LB_Play";
-            this.LB_Play.Size = new System.Drawing.Size(34, 16);
+            this.LB_Play.Size = new System.Drawing.Size(27, 13);
             this.LB_Play.TabIndex = 4;
             this.LB_Play.Text = "Play";
-            this.LB_Play.Click += new System.EventHandler(this.label2_Click);
+            this.LB_Play.Click += new System.EventHandler(this.LB_Play_Click);
             // 
             // LB_Rules
             // 
             this.LB_Rules.AutoSize = true;
-            this.LB_Rules.Location = new System.Drawing.Point(496, 547);
+            this.LB_Rules.Location = new System.Drawing.Point(372, 444);
+            this.LB_Rules.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Rules.Name = "LB_Rules";
-            this.LB_Rules.Size = new System.Drawing.Size(42, 16);
+            this.LB_Rules.Size = new System.Drawing.Size(34, 13);
             this.LB_Rules.TabIndex = 5;
             this.LB_Rules.Text = "Rules";
             this.LB_Rules.Click += new System.EventHandler(this.LB_Rules_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1038, 617);
+            this.ClientSize = new System.Drawing.Size(778, 501);
             this.Controls.Add(this.LB_Rules);
             this.Controls.Add(this.LB_Play);
             this.Controls.Add(this.label1);
@@ -130,6 +135,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormMain";
             this.Text = "Beyblade";
             this.Load += new System.EventHandler(this.FormMain_Load);

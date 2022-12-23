@@ -12,7 +12,7 @@ namespace beyblade
 {
     public partial class FormNiveis : Form
     {
-        private NewDataSet _loginData;
+        //private NewDataSet _loginData;
         public FormNiveis()
         {
             InitializeComponent();
@@ -31,9 +31,14 @@ namespace beyblade
             float atrito = 10;
             float velocidade = 10;
 
-            FormNiveis formNiveis = new FormNiveis();
-            formNiveis.Show();
+            FormPlay formPlay = new FormPlay();
+            formPlay.Show();
             this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

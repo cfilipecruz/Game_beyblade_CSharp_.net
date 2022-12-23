@@ -43,7 +43,8 @@
             this.fileToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(800, 28);
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MenuStrip.Size = new System.Drawing.Size(600, 24);
             this.MenuStrip.TabIndex = 0;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -52,21 +53,23 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // LB_NIVEL_01
             // 
             this.LB_NIVEL_01.AutoSize = true;
-            this.LB_NIVEL_01.Location = new System.Drawing.Point(235, 214);
+            this.LB_NIVEL_01.Location = new System.Drawing.Point(176, 174);
+            this.LB_NIVEL_01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_NIVEL_01.Name = "LB_NIVEL_01";
-            this.LB_NIVEL_01.Size = new System.Drawing.Size(48, 16);
+            this.LB_NIVEL_01.Size = new System.Drawing.Size(40, 13);
             this.LB_NIVEL_01.TabIndex = 1;
             this.LB_NIVEL_01.Text = "Nivel 1";
             this.LB_NIVEL_01.Click += new System.EventHandler(this.LB_NIVEL_01_Click);
@@ -75,23 +78,25 @@
             // 
             this.LB_Niveis.AutoSize = true;
             this.LB_Niveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Niveis.Location = new System.Drawing.Point(333, 97);
+            this.LB_Niveis.Location = new System.Drawing.Point(250, 79);
+            this.LB_Niveis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Niveis.Name = "LB_Niveis";
-            this.LB_Niveis.Size = new System.Drawing.Size(86, 29);
+            this.LB_Niveis.Size = new System.Drawing.Size(67, 24);
             this.LB_Niveis.TabIndex = 2;
             this.LB_Niveis.Text = "Niveis";
             // 
             // FormNiveis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.LB_Niveis);
             this.Controls.Add(this.LB_NIVEL_01);
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormNiveis";
-            this.Text = "Form1";
+            this.Text = "FormNiveis";
             this.Load += new System.EventHandler(this.FormNiveis_Load);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
