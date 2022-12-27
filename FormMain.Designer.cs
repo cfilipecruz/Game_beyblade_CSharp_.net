@@ -32,23 +32,22 @@
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Label_MainMenu_Dark = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LB_Play = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.LB_Rules = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
             // 
-            this.MenuStrip.BackColor = System.Drawing.Color.White;
+            this.MenuStrip.BackColor = System.Drawing.Color.Transparent;
             this.MenuStrip.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1038, 43);
+            this.MenuStrip.Size = new System.Drawing.Size(1422, 43);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             this.MenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip_ItemClicked);
@@ -64,55 +63,53 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 40);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
-            // Label_MainMenu_Dark
-            // 
-            this.Label_MainMenu_Dark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_MainMenu_Dark.BackColor = System.Drawing.Color.Transparent;
-            this.Label_MainMenu_Dark.Font = new System.Drawing.Font("Silom", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_MainMenu_Dark.Location = new System.Drawing.Point(186, 139);
-            this.Label_MainMenu_Dark.Name = "Label_MainMenu_Dark";
-            this.Label_MainMenu_Dark.Size = new System.Drawing.Size(730, 313);
-            this.Label_MainMenu_Dark.TabIndex = 2;
-            this.Label_MainMenu_Dark.Text = "BeyBlade";
-            this.Label_MainMenu_Dark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Silom", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 139);
+            this.label1.Font = new System.Drawing.Font("Silom", 150F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(141, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(730, 313);
+            this.label1.Size = new System.Drawing.Size(1218, 245);
             this.label1.TabIndex = 3;
             this.label1.Text = "BeyBlade";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_Play
+            // label2
             // 
-            this.LB_Play.AutoSize = true;
-            this.LB_Play.Location = new System.Drawing.Point(496, 490);
-            this.LB_Play.Name = "LB_Play";
-            this.LB_Play.Size = new System.Drawing.Size(34, 16);
-            this.LB_Play.TabIndex = 4;
-            this.LB_Play.Text = "Play";
-            this.LB_Play.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Silom", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(534, 465);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(386, 125);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Play";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
             // 
             // LB_Rules
             // 
-            this.LB_Rules.AutoSize = true;
-            this.LB_Rules.Location = new System.Drawing.Point(496, 547);
+            this.LB_Rules.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LB_Rules.BackColor = System.Drawing.Color.Transparent;
+            this.LB_Rules.Font = new System.Drawing.Font("Silom", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Rules.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LB_Rules.Location = new System.Drawing.Point(536, 599);
             this.LB_Rules.Name = "LB_Rules";
-            this.LB_Rules.Size = new System.Drawing.Size(42, 16);
+            this.LB_Rules.Size = new System.Drawing.Size(384, 137);
             this.LB_Rules.TabIndex = 5;
             this.LB_Rules.Text = "Rules";
-            this.LB_Rules.Click += new System.EventHandler(this.LB_Rules_Click);
+            this.LB_Rules.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_Rules.Click += new System.EventHandler(this.LB_Rules_Click_1);
+            this.LB_Rules.MouseLeave += new System.EventHandler(this.LB_Rules_MouseLeave);
+            this.LB_Rules.MouseHover += new System.EventHandler(this.LB_Rules_MouseHover);
             // 
             // FormMain
             // 
@@ -120,12 +117,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1038, 617);
+            this.ClientSize = new System.Drawing.Size(1422, 809);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LB_Rules);
-            this.Controls.Add(this.LB_Play);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MenuStrip);
-            this.Controls.Add(this.Label_MainMenu_Dark);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HelpButton = true;
@@ -144,9 +140,8 @@
         private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label Label_MainMenu_Dark;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LB_Play;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LB_Rules;
     }
 }
