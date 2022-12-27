@@ -35,6 +35,9 @@
             this.LB_NIVEL_01 = new System.Windows.Forms.Label();
             this.LB_Niveis = new System.Windows.Forms.Label();
             this.LB_BACK = new System.Windows.Forms.Label();
+            this.LB_NIVEL_2 = new System.Windows.Forms.Label();
+            this.LB_NIVEL_3 = new System.Windows.Forms.Label();
+            this.LB_NIVEL_4 = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,17 +76,18 @@
             // 
             // LB_NIVEL_01
             // 
-            this.LB_NIVEL_01.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LB_NIVEL_01.AutoSize = true;
+            this.LB_NIVEL_01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LB_NIVEL_01.BackColor = System.Drawing.Color.Transparent;
             this.LB_NIVEL_01.Font = new System.Drawing.Font("Silom", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_NIVEL_01.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LB_NIVEL_01.Location = new System.Drawing.Point(248, 391);
+            this.LB_NIVEL_01.Location = new System.Drawing.Point(241, 391);
             this.LB_NIVEL_01.Name = "LB_NIVEL_01";
-            this.LB_NIVEL_01.Size = new System.Drawing.Size(409, 114);
+            this.LB_NIVEL_01.Size = new System.Drawing.Size(478, 114);
             this.LB_NIVEL_01.TabIndex = 1;
             this.LB_NIVEL_01.Text = "Nivel 1";
             this.LB_NIVEL_01.Click += new System.EventHandler(this.LB_NIVEL_01_Click);
+            this.LB_NIVEL_01.MouseLeave += new System.EventHandler(this.LB_NIVEL_01_MouseLeave);
+            this.LB_NIVEL_01.MouseHover += new System.EventHandler(this.LB_NIVEL_01_MouseHover);
             // 
             // LB_Niveis
             // 
@@ -113,6 +117,51 @@
             this.LB_BACK.MouseLeave += new System.EventHandler(this.LB_BACK_MouseLeave);
             this.LB_BACK.MouseHover += new System.EventHandler(this.LB_BACK_MouseHover);
             // 
+            // LB_NIVEL_2
+            // 
+            this.LB_NIVEL_2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LB_NIVEL_2.BackColor = System.Drawing.Color.Transparent;
+            this.LB_NIVEL_2.Font = new System.Drawing.Font("Silom", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NIVEL_2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LB_NIVEL_2.Location = new System.Drawing.Point(764, 391);
+            this.LB_NIVEL_2.Name = "LB_NIVEL_2";
+            this.LB_NIVEL_2.Size = new System.Drawing.Size(478, 114);
+            this.LB_NIVEL_2.TabIndex = 4;
+            this.LB_NIVEL_2.Text = "Nivel 2";
+            this.LB_NIVEL_2.Click += new System.EventHandler(this.LB_NIVEL_2_Click);
+            this.LB_NIVEL_2.MouseLeave += new System.EventHandler(this.LB_NIVEL_2_MouseLeave);
+            this.LB_NIVEL_2.MouseHover += new System.EventHandler(this.LB_NIVEL_2_MouseHover);
+            // 
+            // LB_NIVEL_3
+            // 
+            this.LB_NIVEL_3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LB_NIVEL_3.BackColor = System.Drawing.Color.Transparent;
+            this.LB_NIVEL_3.Font = new System.Drawing.Font("Silom", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NIVEL_3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LB_NIVEL_3.Location = new System.Drawing.Point(241, 532);
+            this.LB_NIVEL_3.Name = "LB_NIVEL_3";
+            this.LB_NIVEL_3.Size = new System.Drawing.Size(478, 114);
+            this.LB_NIVEL_3.TabIndex = 5;
+            this.LB_NIVEL_3.Text = "Nivel 3";
+            this.LB_NIVEL_3.Click += new System.EventHandler(this.LB_NIVEL_3_Click);
+            this.LB_NIVEL_3.MouseLeave += new System.EventHandler(this.LB_NIVEL_3_MouseLeave);
+            this.LB_NIVEL_3.MouseHover += new System.EventHandler(this.LB_NIVEL_3_MouseHover);
+            // 
+            // LB_NIVEL_4
+            // 
+            this.LB_NIVEL_4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LB_NIVEL_4.BackColor = System.Drawing.Color.Transparent;
+            this.LB_NIVEL_4.Font = new System.Drawing.Font("Silom", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NIVEL_4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LB_NIVEL_4.Location = new System.Drawing.Point(764, 532);
+            this.LB_NIVEL_4.Name = "LB_NIVEL_4";
+            this.LB_NIVEL_4.Size = new System.Drawing.Size(478, 114);
+            this.LB_NIVEL_4.TabIndex = 6;
+            this.LB_NIVEL_4.Text = "Nivel 4";
+            this.LB_NIVEL_4.Click += new System.EventHandler(this.LB_NIVEL_4_Click);
+            this.LB_NIVEL_4.MouseLeave += new System.EventHandler(this.LB_NIVEL_4_MouseLeave);
+            this.LB_NIVEL_4.MouseHover += new System.EventHandler(this.LB_NIVEL_4_MouseHover);
+            // 
             // FormNiveis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,6 +169,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1422, 803);
+            this.Controls.Add(this.LB_NIVEL_4);
+            this.Controls.Add(this.LB_NIVEL_3);
+            this.Controls.Add(this.LB_NIVEL_2);
             this.Controls.Add(this.LB_BACK);
             this.Controls.Add(this.LB_Niveis);
             this.Controls.Add(this.LB_NIVEL_01);
@@ -145,5 +197,8 @@
         private System.Windows.Forms.Label LB_NIVEL_01;
         private System.Windows.Forms.Label LB_Niveis;
         private System.Windows.Forms.Label LB_BACK;
+        private System.Windows.Forms.Label LB_NIVEL_2;
+        private System.Windows.Forms.Label LB_NIVEL_3;
+        private System.Windows.Forms.Label LB_NIVEL_4;
     }
 }

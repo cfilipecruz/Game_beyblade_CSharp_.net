@@ -37,7 +37,7 @@ namespace beyblade
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
             soundclick.Play();
-            this.Close();
+            Application.Exit();
         }
 
         private void MenuStrip_Click(object sender, EventArgs e)

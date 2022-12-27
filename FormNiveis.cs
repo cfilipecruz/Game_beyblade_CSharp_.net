@@ -14,10 +14,13 @@ namespace beyblade
 {
     public partial class FormNiveis : Form
     {
-   
+        public static int massa;
+        public static int aceleracao;
+        public static int atrito;
         public FormNiveis()
         {
-            InitializeComponent();
+            
+        InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
@@ -27,17 +30,7 @@ namespace beyblade
             MenuStrip.BackColor = Color.Transparent;
         }
 
-        private void LB_NIVEL_01_Click(object sender, EventArgs e)
-        {
-            float massa = 10;
-            float aceleracao = 10;
-            float atrito = 10;
-            float velocidade = 10;
 
-            FormPlay formPlay = new FormPlay();
-            formPlay.Show();
-            this.Hide();
-        }
 
         private void LB_BACK_Click(object sender, EventArgs e)
         {
@@ -52,7 +45,7 @@ namespace beyblade
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
             soundclick.Play();
-            this.Close();
+            Application.Exit();
         }
 
         private void LB_BACK_MouseHover(object sender, EventArgs e)
@@ -86,6 +79,114 @@ namespace beyblade
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
             soundhover.Play();
+        }
+
+        private void LB_NIVEL_01_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            LB_NIVEL_01.BorderStyle = BorderStyle.FixedSingle;
+            LB_NIVEL_01.BackColor = Color.FromArgb(100, 255, 255, 255);
+            soundhover.Play();
+        }
+
+        private void LB_NIVEL_01_MouseLeave(object sender, EventArgs e)
+        {
+            LB_NIVEL_01.BackColor = Color.FromArgb(0, 255, 255, 255);
+            LB_NIVEL_01.BorderStyle = BorderStyle.None;
+        }
+        private void LB_NIVEL_01_Click(object sender, EventArgs e)
+        {
+            FormNiveis.massa = 10; //Assign values to static members
+            FormNiveis.aceleracao = 10; //Assign values to static members
+            FormNiveis.atrito = 15; //Assign values to static members
+
+            FormPlay formPlay = new FormPlay();
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+            formPlay.Show();
+            this.Hide();
+        }
+
+        private void LB_NIVEL_2_Click(object sender, EventArgs e)
+        {
+            FormNiveis.massa = 20; //Assign values to static members
+            FormNiveis.aceleracao = 20; //Assign values to static members
+            FormNiveis.atrito = 15; //Assign values to static members
+
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+            FormPlay formPlay = new FormPlay();
+            formPlay.Show();
+            this.Hide();
+        }
+
+        private void LB_NIVEL_3_Click(object sender, EventArgs e)
+        {
+
+            FormNiveis.massa = 30; //Assign values to static members
+            FormNiveis.aceleracao = 30; //Assign values to static members
+            FormNiveis.atrito = 15; //Assign values to static members
+
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+            FormPlay formPlay = new FormPlay();
+            formPlay.Show();
+            this.Hide();
+        }
+
+        private void LB_NIVEL_4_Click(object sender, EventArgs e)
+        {
+            FormNiveis.massa = 40; //Assign values to static members
+            FormNiveis.aceleracao = 40; //Assign values to static members
+            FormNiveis.atrito = 15; //Assign values to static members
+
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+            FormPlay formPlay = new FormPlay();
+            formPlay.Show();
+            this.Hide();
+        }
+
+        private void LB_NIVEL_2_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            LB_NIVEL_2.BorderStyle = BorderStyle.FixedSingle;
+            LB_NIVEL_2.BackColor = Color.FromArgb(100, 255, 255, 255);
+            soundhover.Play();
+        }
+
+        private void LB_NIVEL_2_MouseLeave(object sender, EventArgs e)
+        {
+            LB_NIVEL_2.BackColor = Color.FromArgb(0, 255, 255, 255);
+            LB_NIVEL_2.BorderStyle = BorderStyle.None;
+        }
+
+        private void LB_NIVEL_3_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            LB_NIVEL_3.BorderStyle = BorderStyle.FixedSingle;
+            LB_NIVEL_3.BackColor = Color.FromArgb(100, 255, 255, 255);
+            soundhover.Play();
+        }
+
+        private void LB_NIVEL_3_MouseLeave(object sender, EventArgs e)
+        {
+            LB_NIVEL_3.BackColor = Color.FromArgb(0, 255, 255, 255);
+            LB_NIVEL_3.BorderStyle = BorderStyle.None;
+        }
+
+        private void LB_NIVEL_4_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            LB_NIVEL_4.BorderStyle = BorderStyle.FixedSingle;
+            LB_NIVEL_4.BackColor = Color.FromArgb(100, 255, 255, 255);
+            soundhover.Play();
+        }
+
+        private void LB_NIVEL_4_MouseLeave(object sender, EventArgs e)
+        {
+            LB_NIVEL_4.BackColor = Color.FromArgb(0, 255, 255, 255);
+            LB_NIVEL_4.BorderStyle = BorderStyle.None;
         }
     }
 }
