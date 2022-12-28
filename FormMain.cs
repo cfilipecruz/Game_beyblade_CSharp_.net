@@ -75,7 +75,7 @@ namespace beyblade
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
             LB_Rules.BorderStyle = BorderStyle.FixedSingle;
             LB_Rules.BackColor = Color.FromArgb(100, 255, 255, 255);
-            soundhover.Play();
+             soundhover.Play();
 
         }
 

@@ -60,9 +60,8 @@
             this.fileToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1422, 43);
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(600, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(873, 36);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -73,17 +72,14 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(90, 39);
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // LB_GoBack
             // 
@@ -91,14 +87,13 @@
             this.LB_GoBack.AutoSize = true;
             this.LB_GoBack.BackColor = System.Drawing.Color.Transparent;
             this.LB_GoBack.Font = new System.Drawing.Font("Silom", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_GoBack.Location = new System.Drawing.Point(75, 705);
-            this.LB_GoBack.Location = new System.Drawing.Point(11, 344);
+            this.LB_GoBack.Location = new System.Drawing.Point(11, 501);
             this.LB_GoBack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_GoBack.Name = "LB_GoBack";
-            this.LB_GoBack.Size = new System.Drawing.Size(236, 76);
-            this.LB_GoBack.TabIndex = 3;
-            this.LB_GoBack.Text = "Niveis";
-            this.LB_GoBack.Click += new System.EventHandler(this.LB_GoBack_Click_1);
+            this.LB_GoBack.Size = new System.Drawing.Size(188, 61);
+            this.LB_GoBack.TabIndex = 2;
+            this.LB_GoBack.Text = "label1";
+            this.LB_GoBack.Click += new System.EventHandler(this.LB_GoBack_Click);
             // 
             // label1
             // 
@@ -106,9 +101,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Silom", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(996, 705);
+            this.label1.Location = new System.Drawing.Point(996, 862);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 76);
+            this.label1.Size = new System.Drawing.Size(273, 61);
             this.label1.TabIndex = 4;
             this.label1.Text = "Reiniciar";
             // 
@@ -118,7 +113,7 @@
             this.LB_Massa.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Massa.Location = new System.Drawing.Point(409, 333);
             this.LB_Massa.Name = "LB_Massa";
-            this.LB_Massa.Size = new System.Drawing.Size(152, 39);
+            this.LB_Massa.Size = new System.Drawing.Size(124, 31);
             this.LB_Massa.TabIndex = 5;
             this.LB_Massa.Text = "Massa:0";
             // 
@@ -128,13 +123,9 @@
             this.LB_Aceleracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Aceleracao.Location = new System.Drawing.Point(624, 333);
             this.LB_Aceleracao.Name = "LB_Aceleracao";
-            this.LB_Aceleracao.Size = new System.Drawing.Size(228, 39);
+            this.LB_Aceleracao.Size = new System.Drawing.Size(185, 31);
             this.LB_Aceleracao.TabIndex = 6;
             this.LB_Aceleracao.Text = "Acelereção:0";
-            this.LB_GoBack.Size = new System.Drawing.Size(35, 13);
-            this.LB_GoBack.TabIndex = 2;
-            this.LB_GoBack.Text = "label1";
-            this.LB_GoBack.Click += new System.EventHandler(this.LB_GoBack_Click);
             // 
             // panelArena
             // 
@@ -183,11 +174,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1422, 803);
+            this.ClientSize = new System.Drawing.Size(873, 523);
             this.Controls.Add(this.LB_Aceleracao);
             this.Controls.Add(this.LB_Massa);
             this.Controls.Add(this.label1);
-            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelRaio);

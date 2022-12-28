@@ -94,10 +94,7 @@ namespace beyblade
             myBuffer.Dispose();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
