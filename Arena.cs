@@ -31,9 +31,10 @@ namespace beyblade
             get { return area; }
             set { area = value; }
         }
-        public Beyblade Objecto
+        public Beyblade Jogador
         {
             get { return beyblade; }
+            set { beyblade = value; }
         }
 
         public void iniciaBeyblade(Beyblade b)

@@ -37,6 +37,8 @@
             this.panelArena = new System.Windows.Forms.Panel();
             this.timerAnima = new System.Windows.Forms.Timer(this.components);
             this.labelRaio = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonPlay = new System.Windows.Forms.Button();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +98,6 @@
             // 
             // timerAnima
             // 
-            this.timerAnima.Enabled = true;
             this.timerAnima.Interval = 30;
             this.timerAnima.Tick += new System.EventHandler(this.timerAnima_Tick);
             // 
@@ -109,11 +110,30 @@
             this.labelRaio.TabIndex = 4;
             this.labelRaio.Text = "label1";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 74);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // buttonPlay
+            // 
+            this.buttonPlay.Location = new System.Drawing.Point(14, 117);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlay.TabIndex = 6;
+            this.buttonPlay.Text = "Play";
+            this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
+            // 
             // FormPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.buttonPlay);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelRaio);
             this.Controls.Add(this.panelArena);
             this.Controls.Add(this.LB_GoBack);
@@ -140,5 +160,7 @@
         private System.Windows.Forms.Panel panelArena;
         private System.Windows.Forms.Timer timerAnima;
         private System.Windows.Forms.Label labelRaio;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonPlay;
     }
 }

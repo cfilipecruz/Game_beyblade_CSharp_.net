@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace beyblade
 {
@@ -17,10 +18,12 @@ namespace beyblade
         {
             InitializeComponent();
             arena = new Arena(panelArena.DisplayRectangle.Size);
+
         }
 
         private void FormPlay_Load(object sender, EventArgs e)
         {
+
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
             MenuStrip.BackColor = Color.Transparent;
         }
@@ -46,11 +49,12 @@ namespace beyblade
 
         private void timerAnima_Tick(object sender, EventArgs e)
         {
+
             arena.move();
             reDesenha();
-            labelRaio.Text = arena.Objecto.aVelo.ToString();
+            labelRaio.Text = arena.Jogador.aVelo.ToString();
 
-            if (arena.Objecto.aVelo == 0)
+            if (arena.Jogador.aVelo == 0)
             {
                 timerAnima.Stop();
             }
@@ -72,6 +76,21 @@ namespace beyblade
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            arena.Jogador.aVelo = float.Parse(textBox1.Text);
+
+            timerAnima.Enabled = !timerAnima.Enabled;
+            if (!timerAnima.Enabled)
+            {
+                buttonPlay.Text = "Play";
+
+            }
+            {
+                buttonPlay.Visible = false;
+            }
         }
     }
 }
