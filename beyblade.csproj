@@ -120,5 +120,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\IMG\95mx53uh2of71.ico" />
+    <Content Include="Assets\IMG\Background-01.png" />
+    <Content Include="Assets\Sounds\click.mp3" />
+    <Content Include="Assets\Sounds\menuHoover.mp3" />
+    <Content Include="Assets\Sounds\mouseHoover.mp3" />
+    <Content Include="Assets\Sounds\mouseHoover.wav" />
+    <Content Include="Assets\Sounds\song1.wav" />
+    <Content Include="Assets\Sounds\sound.mp3" />
+    <Content Include="Assets\Sounds\soundtrack.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

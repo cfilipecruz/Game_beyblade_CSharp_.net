@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +17,13 @@ namespace beyblade
 {
     public partial class FormRules : Form
     {
+
+       
         public FormRules()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+
         }
 
         private void FormRules_Load(object sender, EventArgs e)
@@ -36,14 +42,14 @@ namespace beyblade
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-            soundclick.Play();
+          //  soundclick.Play();
             Application.Exit();
         }
 
         private void MenuStrip_Click(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-            soundclick.Play();
+           // soundclick.Play();
         }
 
         private void LB_GoBack_MouseHover(object sender, EventArgs e)
@@ -51,7 +57,7 @@ namespace beyblade
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
             LB_GoBack.BorderStyle = BorderStyle.FixedSingle;
             LB_GoBack.BackColor = Color.FromArgb(100, 255, 255, 255);
-            soundhover.Play();
+          //  soundhover.Play();
         }
 
         private void LB_GoBack_MouseLeave(object sender, EventArgs e)
@@ -63,13 +69,13 @@ namespace beyblade
         private void MenuStrip_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-            soundhover.Play();
+         //   soundhover.Play();
         }
 
         private void exitToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-            soundhover.Play();
+          //  soundhover.Play();
         }
     }
 }

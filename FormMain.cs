@@ -1,10 +1,13 @@
-﻿using System;
+﻿using beyblade.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +16,10 @@ namespace beyblade
 {
     public partial class FormMain : Form
     {
+      
+        Stream hoover = Assembly.GetExecutingAssembly().GetManifestResourceStream("menuHoover.mp3");
+        Stream click = Assembly.GetExecutingAssembly().GetManifestResourceStream("D:\\Escola\\Licenciatura\\4º Ano\\1º Semestre\\Progig\\Projeto\\beyblade\\Assets\\Sounds\\song1.wav");
+
         public FormMain()
         {
             InitializeComponent();
@@ -30,32 +37,32 @@ namespace beyblade
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-            soundclick.Play();
+           // soundclick.Play();
             Application.Exit();
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-            soundclick.Play();
+           // soundclick.Play();
         }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-          
-            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-             soundclick.Play();
+
+             SoundPlayer soundclick = new SoundPlayer(click);
+           //  soundclick.Play();
+
              FormNiveis formNiveis = new FormNiveis();
              formNiveis.Show();
              this.Hide();
-
 
         }
 
         private void LB_Rules_Click_1(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-            soundclick.Play();
+           // soundclick.Play();
             FormRules formRules = new FormRules();
             formRules.Show();
             this.Hide();
@@ -63,10 +70,10 @@ namespace beyblade
 
         private void label2_MouseHover(object sender, EventArgs e)
         {
-            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            SoundPlayer soundhover = new SoundPlayer(hoover);
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.BackColor = Color.FromArgb(100, 255, 255, 255);
-            soundhover.Play();
+          //  soundhover.Play();
           
         }
 
@@ -75,7 +82,7 @@ namespace beyblade
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
             LB_Rules.BorderStyle = BorderStyle.FixedSingle;
             LB_Rules.BackColor = Color.FromArgb(100, 255, 255, 255);
-             soundhover.Play();
+           //  soundhover.Play();
 
         }
 
@@ -94,13 +101,13 @@ namespace beyblade
         private void fileToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-            soundhover.Play();
+          //  soundhover.Play();
         }
 
         private void exitToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-            soundhover.Play();
+          //  soundhover.Play();
         }
     }
 }

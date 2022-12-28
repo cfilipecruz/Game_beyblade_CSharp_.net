@@ -110,5 +110,25 @@ namespace beyblade
                 buttonPlay.Visible = false;
             }
         }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fileToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
