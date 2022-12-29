@@ -15,7 +15,6 @@ namespace beyblade
         Beyblade beybladeInimigo;
         Atractor atractor;
         private List<Particula> particulas;
-        private float veloMax=0;
 
         private Vector2 emissor;
 
@@ -48,11 +47,7 @@ namespace beyblade
             get { return beybladeInimigo; }
             set { beyblade = value; }
         }
-        public float velocidadeMax
-        {
-            get { return veloMax;}
-            set { veloMax= value; }   
-        }
+
 
         public void iniciaBeyblade()
         {
