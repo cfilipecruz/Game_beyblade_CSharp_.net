@@ -19,12 +19,12 @@ namespace beyblade
 
         public Atractor(Vector2 location)
         {
-            massa = 800;
+            massa = 400;
             pos = location;
-            G = 0.4f;
+            G = 0.8f;
 
 
-            raio = 10;
+            raio = 50;
             brushAtractor = new SolidBrush(Color.Brown);
             rectAtractor = new RectangleF(-raio, -raio, raio * 2, raio * 2);
         }

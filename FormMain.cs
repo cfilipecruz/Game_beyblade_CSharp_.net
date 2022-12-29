@@ -1,5 +1,4 @@
 ﻿using beyblade.Properties;
-using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,7 +77,7 @@ namespace beyblade
         {
 
             SoundPlayer soundPlay = new SoundPlayer(Path.Combine(assetPath, "mouseHoover.mp3"));
-            soundPlay.Play();
+           // soundPlay.Play();
             label2.BorderStyle = BorderStyle.FixedSingle; 
             label2.BackColor = Color.FromArgb(100, 255, 255, 255);
           

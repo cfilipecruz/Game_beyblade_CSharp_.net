@@ -15,12 +15,13 @@ namespace beyblade
     public partial class FormPlay : Form
     {
         public static int massa;
-        public static int aceleracao;
+        public static int rotacao;
         private Arena arena;
         public FormPlay()
         {
             massa = FormNiveis.massa; 
-            aceleracao = FormNiveis.aceleracao;
+            rotacao = FormNiveis.rotacao;
+
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             arena = new Arena(panelArena.DisplayRectangle.Size);
@@ -32,8 +33,11 @@ namespace beyblade
 
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
             LB_Massa.Text = "Massa: " + massa;
-            LB_Aceleracao.Text = "Aceleração: " + aceleracao;
-           
+            LB_Aceleracao.Text = "Aceleração: " + rotacao;
+
+            arena.Inimigo.Massa = massa;
+            arena.Inimigo.aVelo = rotacao;
+
         }
 
         private void LB_GoBack_Click(object sender, EventArgs e)
@@ -73,12 +77,13 @@ namespace beyblade
 
             arena.move();
             reDesenha();
-            labelRaio.Text = arena.Jogador.aVelo.ToString();
+            labelRaio.Text = arena.Jogador.aVelo.ToString() + " , " + arena.Jogador.Massa.ToString();
+            labelInimigo.Text=arena.Inimigo.aVelo.ToString() +" , "+arena.Inimigo.Massa.ToString();
 
-            if (arena.Jogador.aVelo == 0)
-            {
-                timerAnima.Stop();
-            }
+            //if (arena.Jogador.aVelo == 0)
+            //{
+            //    timerAnima.Stop();
+            //}
         }
 
         private void reDesenha()

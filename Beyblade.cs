@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-using System.Drawing;
+
 
 
 namespace beyblade
@@ -20,6 +20,7 @@ namespace beyblade
 
         private float raio;
         public SolidBrush brushBola;
+        public Pen pen;
         private RectangleF rectBola;
 
         private Random rnd;
@@ -31,8 +32,9 @@ namespace beyblade
             aVelo = 20;
 
             massa = 1;
-            raio = 10;
+            raio = 40;
             brushBola = new SolidBrush(Color.Aquamarine);
+            pen= new Pen(Color.Black,3);
             rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
             pos = new Vector2();
             velo = new Vector2(0);
@@ -60,7 +62,7 @@ namespace beyblade
             set
             {
                 massa = value;
-                raio = massa * 5;
+                //raio = massa * 5;
                 rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
             }
         }
@@ -87,7 +89,9 @@ namespace beyblade
             g.ResetTransform();
             g.RotateTransform(angle);
             g.TranslateTransform(pos.X, pos.Y, System.Drawing.Drawing2D.MatrixOrder.Append);
-            g.FillRectangle(brushBola, rectBola);
+
+            g.FillEllipse(brushBola, rectBola);
+            g.DrawEllipse(pen, -raio, 0, raio*2,0);
 
         }
 
