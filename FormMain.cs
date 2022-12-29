@@ -1,8 +1,10 @@
 ﻿using beyblade.Properties;
+using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,10 +18,13 @@ namespace beyblade
 {
     public partial class FormMain : Form
     {
-      
-        Stream hoover = Assembly.GetExecutingAssembly().GetManifestResourceStream("menuHoover.mp3");
-        Stream click = Assembly.GetExecutingAssembly().GetManifestResourceStream("D:\\Escola\\Licenciatura\\4º Ano\\1º Semestre\\Progig\\Projeto\\beyblade\\Assets\\Sounds\\song1.wav");
 
+        Stream hoover = Assembly.GetExecutingAssembly().GetManifestResourceStream("Assets.Sounds.menuHoover.mp3");
+
+        static string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        string assetPath = Path.Combine(appDirectory, "Assets", "Sounds");
+       
+     
         public FormMain()
         {
             InitializeComponent();
@@ -39,6 +44,7 @@ namespace beyblade
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
            // soundclick.Play();
             Application.Exit();
+       
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -50,7 +56,7 @@ namespace beyblade
         private void label2_Click_1(object sender, EventArgs e)
         {
 
-             SoundPlayer soundclick = new SoundPlayer(click);
+            // SoundPlayer soundclick = new SoundPlayer(click);
            //  soundclick.Play();
 
              FormNiveis formNiveis = new FormNiveis();
@@ -70,10 +76,12 @@ namespace beyblade
 
         private void label2_MouseHover(object sender, EventArgs e)
         {
-            SoundPlayer soundhover = new SoundPlayer(hoover);
-            label2.BorderStyle = BorderStyle.FixedSingle;
+
+            SoundPlayer soundPlay = new SoundPlayer(Path.Combine(assetPath, "mouseHoover.mp3"));
+            soundPlay.Play();
+            label2.BorderStyle = BorderStyle.FixedSingle; 
             label2.BackColor = Color.FromArgb(100, 255, 255, 255);
-          //  soundhover.Play();
+          
           
         }
 
@@ -108,6 +116,11 @@ namespace beyblade
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
           //  soundhover.Play();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
