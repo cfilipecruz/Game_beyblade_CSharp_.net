@@ -41,7 +41,6 @@
             this.panelArena = new System.Windows.Forms.Panel();
             this.timerAnima = new System.Windows.Forms.Timer(this.components);
             this.labelRaio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.labelInimigo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,8 +54,15 @@
             this.RB_40 = new System.Windows.Forms.RadioButton();
             this.RB_50 = new System.Windows.Forms.RadioButton();
             this.RB_60 = new System.Windows.Forms.RadioButton();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RBA_25 = new System.Windows.Forms.RadioButton();
+            this.RBA_50 = new System.Windows.Forms.RadioButton();
+            this.RBA_100 = new System.Windows.Forms.RadioButton();
+            this.RBA_10 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -70,11 +76,12 @@
             this.MenuStrip.BackColor = System.Drawing.Color.Transparent;
             this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.restartToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(1422, 43);
+            this.MenuStrip.Size = new System.Drawing.Size(1422, 36);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -85,7 +92,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(90, 39);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
             this.fileToolStripMenuItem.Text = "File";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             this.fileToolStripMenuItem.MouseLeave += new System.EventHandler(this.fileToolStripMenuItem_MouseLeave);
@@ -94,7 +101,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 40);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -106,7 +113,7 @@
             this.LB_GoBack.Font = new System.Drawing.Font("Silom", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_GoBack.Location = new System.Drawing.Point(15, 718);
             this.LB_GoBack.Name = "LB_GoBack";
-            this.LB_GoBack.Size = new System.Drawing.Size(236, 76);
+            this.LB_GoBack.Size = new System.Drawing.Size(192, 61);
             this.LB_GoBack.TabIndex = 2;
             this.LB_GoBack.Text = "Niveis";
             this.LB_GoBack.Click += new System.EventHandler(this.LB_GoBack_Click);
@@ -120,7 +127,7 @@
             this.label1.Location = new System.Drawing.Point(1328, 1221);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 76);
+            this.label1.Size = new System.Drawing.Size(273, 61);
             this.label1.TabIndex = 4;
             this.label1.Text = "Reiniciar";
             // 
@@ -131,7 +138,7 @@
             this.LB_Massa.Location = new System.Drawing.Point(31, 536);
             this.LB_Massa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Massa.Name = "LB_Massa";
-            this.LB_Massa.Size = new System.Drawing.Size(148, 38);
+            this.LB_Massa.Size = new System.Drawing.Size(124, 31);
             this.LB_Massa.TabIndex = 5;
             this.LB_Massa.Text = "Massa:0";
             // 
@@ -142,7 +149,7 @@
             this.LB_Aceleracao.Location = new System.Drawing.Point(31, 591);
             this.LB_Aceleracao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Aceleracao.Name = "LB_Aceleracao";
-            this.LB_Aceleracao.Size = new System.Drawing.Size(220, 38);
+            this.LB_Aceleracao.Size = new System.Drawing.Size(185, 31);
             this.LB_Aceleracao.TabIndex = 6;
             this.LB_Aceleracao.Text = "Acelereção:0";
             // 
@@ -170,22 +177,13 @@
             this.labelRaio.Location = new System.Drawing.Point(35, 413);
             this.labelRaio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRaio.Name = "labelRaio";
-            this.labelRaio.Size = new System.Drawing.Size(44, 16);
+            this.labelRaio.Size = new System.Drawing.Size(35, 13);
             this.labelRaio.TabIndex = 4;
             this.labelRaio.Text = "label1";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(38, 372);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // buttonPlay
             // 
-            this.buttonPlay.Location = new System.Drawing.Point(188, 369);
+            this.buttonPlay.Location = new System.Drawing.Point(22, 364);
             this.buttonPlay.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(100, 28);
@@ -200,7 +198,7 @@
             this.labelInimigo.Location = new System.Drawing.Point(35, 440);
             this.labelInimigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelInimigo.Name = "labelInimigo";
-            this.labelInimigo.Size = new System.Drawing.Size(44, 16);
+            this.labelInimigo.Size = new System.Drawing.Size(35, 13);
             this.labelInimigo.TabIndex = 7;
             this.labelInimigo.Text = "label1";
             // 
@@ -241,7 +239,6 @@
             this.B_Massa.TabIndex = 10;
             this.B_Massa.Text = "Massa";
             this.B_Massa.UseVisualStyleBackColor = false;
-            this.B_Massa.Click += new System.EventHandler(this.B_Massa_Click);
             // 
             // LB_MAceleracao
             // 
@@ -250,9 +247,9 @@
             this.LB_MAceleracao.Location = new System.Drawing.Point(31, 478);
             this.LB_MAceleracao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_MAceleracao.Name = "LB_MAceleracao";
-            this.LB_MAceleracao.Size = new System.Drawing.Size(201, 38);
+            this.LB_MAceleracao.Size = new System.Drawing.Size(132, 31);
             this.LB_MAceleracao.TabIndex = 11;
-            this.LB_MAceleracao.Text = "Aceleração:";
+            this.LB_MAceleracao.Text = "Rotação:";
             // 
             // RB_10
             // 
@@ -262,7 +259,7 @@
             this.RB_10.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_10.Location = new System.Drawing.Point(47, 228);
             this.RB_10.Name = "RB_10";
-            this.RB_10.Size = new System.Drawing.Size(89, 31);
+            this.RB_10.Size = new System.Drawing.Size(72, 26);
             this.RB_10.TabIndex = 12;
             this.RB_10.TabStop = true;
             this.RB_10.Text = "10kg";
@@ -275,7 +272,7 @@
             this.RB_20.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_20.Location = new System.Drawing.Point(47, 265);
             this.RB_20.Name = "RB_20";
-            this.RB_20.Size = new System.Drawing.Size(93, 31);
+            this.RB_20.Size = new System.Drawing.Size(75, 26);
             this.RB_20.TabIndex = 13;
             this.RB_20.Text = "20kg";
             this.RB_20.UseVisualStyleBackColor = false;
@@ -287,7 +284,7 @@
             this.RB_30.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_30.Location = new System.Drawing.Point(47, 302);
             this.RB_30.Name = "RB_30";
-            this.RB_30.Size = new System.Drawing.Size(93, 31);
+            this.RB_30.Size = new System.Drawing.Size(75, 26);
             this.RB_30.TabIndex = 14;
             this.RB_30.Text = "30kg";
             this.RB_30.UseVisualStyleBackColor = false;
@@ -299,7 +296,7 @@
             this.RB_40.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_40.Location = new System.Drawing.Point(177, 228);
             this.RB_40.Name = "RB_40";
-            this.RB_40.Size = new System.Drawing.Size(93, 31);
+            this.RB_40.Size = new System.Drawing.Size(75, 26);
             this.RB_40.TabIndex = 15;
             this.RB_40.Text = "40kg";
             this.RB_40.UseVisualStyleBackColor = false;
@@ -311,7 +308,7 @@
             this.RB_50.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_50.Location = new System.Drawing.Point(177, 265);
             this.RB_50.Name = "RB_50";
-            this.RB_50.Size = new System.Drawing.Size(93, 31);
+            this.RB_50.Size = new System.Drawing.Size(75, 26);
             this.RB_50.TabIndex = 16;
             this.RB_50.Text = "50kg";
             this.RB_50.UseVisualStyleBackColor = false;
@@ -323,10 +320,71 @@
             this.RB_60.Font = new System.Drawing.Font("Silom", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RB_60.Location = new System.Drawing.Point(177, 302);
             this.RB_60.Name = "RB_60";
-            this.RB_60.Size = new System.Drawing.Size(93, 31);
+            this.RB_60.Size = new System.Drawing.Size(75, 26);
             this.RB_60.TabIndex = 17;
             this.RB_60.Text = "60kg";
             this.RB_60.UseVisualStyleBackColor = false;
+            // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
+            this.restartToolStripMenuItem.Text = "Restart";
+            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
+            // 
+            // RBA_25
+            // 
+            this.RBA_25.AutoSize = true;
+            this.RBA_25.Location = new System.Drawing.Point(14, 37);
+            this.RBA_25.Name = "RBA_25";
+            this.RBA_25.Size = new System.Drawing.Size(37, 17);
+            this.RBA_25.TabIndex = 18;
+            this.RBA_25.Text = "25";
+            this.RBA_25.UseVisualStyleBackColor = true;
+            // 
+            // RBA_50
+            // 
+            this.RBA_50.AutoSize = true;
+            this.RBA_50.Location = new System.Drawing.Point(14, 60);
+            this.RBA_50.Name = "RBA_50";
+            this.RBA_50.Size = new System.Drawing.Size(37, 17);
+            this.RBA_50.TabIndex = 19;
+            this.RBA_50.Text = "50";
+            this.RBA_50.UseVisualStyleBackColor = true;
+            // 
+            // RBA_100
+            // 
+            this.RBA_100.AutoSize = true;
+            this.RBA_100.Location = new System.Drawing.Point(14, 79);
+            this.RBA_100.Name = "RBA_100";
+            this.RBA_100.Size = new System.Drawing.Size(43, 17);
+            this.RBA_100.TabIndex = 20;
+            this.RBA_100.Text = "100";
+            this.RBA_100.UseVisualStyleBackColor = true;
+            // 
+            // RBA_10
+            // 
+            this.RBA_10.AutoSize = true;
+            this.RBA_10.Checked = true;
+            this.RBA_10.Location = new System.Drawing.Point(14, 14);
+            this.RBA_10.Name = "RBA_10";
+            this.RBA_10.Size = new System.Drawing.Size(37, 17);
+            this.RBA_10.TabIndex = 21;
+            this.RBA_10.TabStop = true;
+            this.RBA_10.Text = "10";
+            this.RBA_10.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.RBA_100);
+            this.panel1.Controls.Add(this.RBA_10);
+            this.panel1.Controls.Add(this.RBA_50);
+            this.panel1.Controls.Add(this.RBA_25);
+            this.panel1.Location = new System.Drawing.Point(388, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(84, 100);
+            this.panel1.TabIndex = 23;
             // 
             // FormPlay
             // 
@@ -334,6 +392,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1422, 803);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.RB_60);
             this.Controls.Add(this.RB_50);
             this.Controls.Add(this.RB_40);
@@ -349,7 +408,6 @@
             this.Controls.Add(this.LB_Massa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPlay);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelRaio);
             this.Controls.Add(this.panelArena);
             this.Controls.Add(this.LB_GoBack);
@@ -364,6 +422,8 @@
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +442,6 @@
         private System.Windows.Forms.Panel panelArena;
         private System.Windows.Forms.Timer timerAnima;
         private System.Windows.Forms.Label labelRaio;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Label labelInimigo;
         private System.Windows.Forms.Button button1;
@@ -396,5 +455,11 @@
         private System.Windows.Forms.RadioButton RB_40;
         private System.Windows.Forms.RadioButton RB_50;
         private System.Windows.Forms.RadioButton RB_60;
+        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
+        private System.Windows.Forms.RadioButton RBA_25;
+        private System.Windows.Forms.RadioButton RBA_50;
+        private System.Windows.Forms.RadioButton RBA_100;
+        private System.Windows.Forms.RadioButton RBA_10;
+        private System.Windows.Forms.Panel panel1;
     }
 }

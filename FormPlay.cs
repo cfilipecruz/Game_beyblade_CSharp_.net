@@ -24,6 +24,10 @@ namespace beyblade
         private int position = 50;
         private ColorBlend cb = new ColorBlend();
 
+        int valorDiv = 5;
+        double percentage;
+
+
         public FormPlay()
         {
             massa = FormNiveis.massa; 
@@ -48,6 +52,7 @@ namespace beyblade
 
             arena.Inimigo.Massa = massa;
            
+
 
         }
 
@@ -113,7 +118,10 @@ namespace beyblade
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            arena.Jogador.aVelo = float.Parse(textBox1.Text);
+            //arena.Jogador.aVelo = float.Parse(textBox1.Text);
+            arena.Jogador.aVelo = (float)percentage;
+
+
 
             timerAnima.Enabled = !timerAnima.Enabled;
             if (!timerAnima.Enabled)
@@ -123,6 +131,32 @@ namespace beyblade
             }
             {
                 buttonPlay.Visible = false;
+            }
+
+
+            if (RB_10.Checked)
+            {
+                arena.Jogador.Massa = 10;
+            }
+            if (RB_20.Checked)
+            {
+                arena.Jogador.Massa = 20;
+            }
+            if (RB_30.Checked)
+            {
+                arena.Jogador.Massa = 30;
+            }
+            if (RB_40.Checked)
+            {
+                arena.Jogador.Massa = 40;
+            }
+            if (RB_50.Checked)
+            {
+                arena.Jogador.Massa = 50;
+            }
+            if (RB_60.Checked)
+            {
+                arena.Jogador.Massa = 60;
             }
         }
 
@@ -200,31 +234,50 @@ namespace beyblade
         {
             if (timer1.Enabled && e.Button == MouseButtons.Left)
             {
+                if (RBA_10.Checked)
+                {
+                    valorDiv = 10;
+                }
+                if (RBA_25.Checked)
+                {
+                    valorDiv = 4;
+                }
+                if (RBA_50.Checked)
+                {
+                    valorDiv = 2;
+                }
+                if (RBA_100.Checked)
+                {
+                    valorDiv = 1;
+                }
+
                 timer1.Stop();
                 button1.Enabled = true;
-                double percentage = (double)position / 100;
-                LB_MAceleracao.Text = $"percentage = {percentage}";
+                percentage = (double)position/valorDiv;
+                LB_MAceleracao.Text = $"Rotação = {percentage}";
             }
         }
 
-        private void B_Massa_Click(object sender, EventArgs e)
-        {
 
+
+
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            restart();
         }
 
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        private void restart()
         {
-            if (timer1.Enabled && e.Button == MouseButtons.Left)
-            {
-                timer1.Stop();
-                button1.Enabled = true;
-                double percentage = (double)position / 100;
-                LB_MAceleracao.Text = $"percentage = {percentage}";
-            }
+           arena.iniciaBeyblade();
+           timerAnima.Stop();
+           panelArena.Invalidate();           
+           buttonPlay.Visible = true;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
 
         }
     }

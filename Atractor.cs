@@ -19,9 +19,9 @@ namespace beyblade
 
         public Atractor(Vector2 location)
         {
-            massa = 400;
+            massa = 300;
             pos = location;
-            G = 0.8f;
+            G = 0.3f;
 
 
             raio = 50;
