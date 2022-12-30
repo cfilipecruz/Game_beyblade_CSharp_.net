@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,12 @@ namespace beyblade
         public static int massa;
         public static int rotacao;
         private Arena arena;
+        private int barJump = 5;
+        private bool direction = true;
+        private int barWidth = 5;
+        private int position = 50;
+        private ColorBlend cb = new ColorBlend();
+
         public FormPlay()
         {
             massa = FormNiveis.massa; 
@@ -25,6 +32,10 @@ namespace beyblade
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             arena = new Arena(panelArena.DisplayRectangle.Size);
+            cb.Positions = new[] { 0, 0.85f, 1 };
+            cb.Colors = new[] {  Color.Red, Color.Yellow,  Color.Green };
+            timer1.Interval = 1;
+            timer1.Enabled = false;
 
         }
 
@@ -36,7 +47,7 @@ namespace beyblade
             LB_Aceleracao.Text = "Aceleração: " + rotacao;
 
             arena.Inimigo.Massa = massa;
-            arena.Inimigo.aVelo = rotacao;
+           
 
         }
 
@@ -49,7 +60,6 @@ namespace beyblade
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             Application.Exit();
         }
 
@@ -132,6 +142,88 @@ namespace beyblade
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (direction)
+            {
+                if (position < 100)
+                {
+                    position = Math.Min(100, position + barJump);
+                }
+                else
+                {
+                    direction = false;
+                    position = Math.Max(0, position - barJump);
+                }
+            }
+            else
+            {
+                if (position > 0)
+                {
+                    position = Math.Max(0, position - barJump);
+                }
+                else
+                {
+                    direction = true;
+                    position = Math.Min(100, position + barJump);
+                }
+            }
+            pictureBox1.Invalidate();
+        
+    }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush lgb = new LinearGradientBrush(pictureBox1.ClientRectangle, Color.Black, Color.Black, 0, false))
+            {
+                lgb.InterpolationColors = cb;
+                e.Graphics.FillRectangle(lgb, pictureBox1.ClientRectangle);
+            }
+            int x = (int)(pictureBox1.ClientRectangle.Width * (double)position / 100);
+            Rectangle rc = new Rectangle(new Point(x, 0), new Size(1, pictureBox1.ClientRectangle.Height - 1));
+            rc.Inflate(barWidth, 0);
+            e.Graphics.DrawRectangle(Pens.Black, rc);
+            e.Graphics.FillRectangle(Brushes.Black, rc);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (timer1.Enabled && e.Button == MouseButtons.Left)
+            {
+                timer1.Stop();
+                button1.Enabled = true;
+                double percentage = (double)position / 100;
+                LB_MAceleracao.Text = $"percentage = {percentage}";
+            }
+        }
+
+        private void B_Massa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (timer1.Enabled && e.Button == MouseButtons.Left)
+            {
+                timer1.Stop();
+                button1.Enabled = true;
+                double percentage = (double)position / 100;
+                LB_MAceleracao.Text = $"percentage = {percentage}";
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
