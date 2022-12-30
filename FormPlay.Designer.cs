@@ -150,6 +150,7 @@
             // 
             this.panelArena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelArena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelArena.Location = new System.Drawing.Point(636, 26);
             this.panelArena.Margin = new System.Windows.Forms.Padding(4);
