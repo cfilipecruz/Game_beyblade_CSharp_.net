@@ -96,8 +96,8 @@ namespace beyblade
         }
         private void LB_NIVEL_01_Click(object sender, EventArgs e)
         {
-            FormNiveis.massa = 10; //Assign values to static members
-            FormNiveis.rotacao = 10; //Assign values to static members
+            FormNiveis.massa = 40; //Assign values to static members
+            FormNiveis.rotacao = 40; //Assign values to static members
 
             FormPlay formPlay = new FormPlay();
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
@@ -108,8 +108,8 @@ namespace beyblade
 
         private void LB_NIVEL_2_Click(object sender, EventArgs e)
         {
-            FormNiveis.massa = 20; //Assign values to static members
-            FormNiveis.rotacao = 20; //Assign values to static members
+            FormNiveis.massa = 60; //Assign values to static members
+            FormNiveis.rotacao = 60; //Assign values to static members
 
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
            // soundclick.Play();
@@ -121,8 +121,8 @@ namespace beyblade
         private void LB_NIVEL_3_Click(object sender, EventArgs e)
         {
 
-            FormNiveis.massa = 30; //Assign values to static members
-            FormNiveis.rotacao = 30; //Assign values to static members
+            FormNiveis.massa = 80; //Assign values to static members
+            FormNiveis.rotacao = 80; //Assign values to static members
 
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
           //  soundclick.Play();
@@ -133,8 +133,8 @@ namespace beyblade
 
         private void LB_NIVEL_4_Click(object sender, EventArgs e)
         {
-            FormNiveis.massa = 40; //Assign values to static members
-            FormNiveis.rotacao = 40; //Assign values to static members
+            FormNiveis.massa = 100; //Assign values to static members
+            FormNiveis.rotacao = 100; //Assign values to static members
 
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
           //  soundclick.Play();

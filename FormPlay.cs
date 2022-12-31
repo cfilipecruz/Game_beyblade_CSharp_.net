@@ -23,6 +23,8 @@ namespace beyblade
         private int barWidth = 5;
         private int position = 50;
         private ColorBlend cb = new ColorBlend();
+ 
+
 
         int valorDiv = 5;
         double percentage;
@@ -36,6 +38,7 @@ namespace beyblade
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             arena = new Arena(panelArena.DisplayRectangle.Size);
+
             cb.Positions = new[] { 0, 0.85f, 1 };
             cb.Colors = new[] {  Color.Red, Color.Yellow,  Color.Green };
             timer1.Interval = 1;
@@ -52,8 +55,6 @@ namespace beyblade
 
             arena.Inimigo.Massa = massa;
            
-
-
         }
 
         private void LB_GoBack_Click(object sender, EventArgs e)
@@ -120,7 +121,6 @@ namespace beyblade
         {
             //arena.Jogador.aVelo = float.Parse(textBox1.Text);
             arena.Jogador.aVelo = (float)percentage;
-
 
 
             timerAnima.Enabled = !timerAnima.Enabled;
@@ -232,15 +232,18 @@ namespace beyblade
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+
             if (timer1.Enabled && e.Button == MouseButtons.Left)
             {
                 if (RBA_10.Checked)
                 {
                     valorDiv = 10;
+              
                 }
                 if (RBA_25.Checked)
                 {
                     valorDiv = 4;
+                 
                 }
                 if (RBA_50.Checked)
                 {
@@ -253,14 +256,11 @@ namespace beyblade
 
                 timer1.Stop();
                 button1.Enabled = true;
-                percentage = (double)position/valorDiv;
-                LB_MAceleracao.Text = $"Rotação = {percentage}";
+                percentage = (int)position/valorDiv;
+
+                LB_MAceleracao.Text = "You got: " + percentage;
             }
         }
-
-
-
-
 
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -278,6 +278,26 @@ namespace beyblade
         private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void labelInimigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelRaio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LB_Massa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LB_Aceleracao_Click(object sender, EventArgs e)
+        {
 
         }
     }

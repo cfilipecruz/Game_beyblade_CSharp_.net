@@ -73,7 +73,6 @@ namespace beyblade
         }
         public void aplicaForca(Vector2 forca)
         {
-
             acel += Vector2.Divide(forca, massa);
         }
         public void move()

@@ -21,10 +21,9 @@ namespace beyblade
         {
             massa = 300;
             pos = location;
-            G = 0.3f;
+            G = 1f;
 
-
-            raio = 50;
+            raio = 40;
             brushAtractor = new SolidBrush(Color.Brown);
             rectAtractor = new RectangleF(-raio, -raio, raio * 2, raio * 2);
         }

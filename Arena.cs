@@ -16,7 +16,8 @@ namespace beyblade
         Atractor atractor;
         private List<Particula> particulas;
 
-        private Vector2 emissor;
+        private Vector2 emissor1;
+        private Vector2 emissor2;
 
         public Arena(Size s)
         {
@@ -27,8 +28,6 @@ namespace beyblade
             iniciaBeyblade();
 
             particulas = new List<Particula>();
-
-
 
             atractor = new Atractor(new Vector2(area.Width / 2, area.Height / 2));
         }
@@ -42,12 +41,12 @@ namespace beyblade
             get { return beyblade; }
             set { beyblade = value; }
         }
+
         public Beyblade Inimigo
         {
             get { return beybladeInimigo; }
             set { beyblade = value; }
         }
-
 
         public void iniciaBeyblade()
         {
@@ -101,7 +100,7 @@ namespace beyblade
         }
         public void colide(float x1, float y1, float r1, float x2, float y2, float r2)
         {
-            Vector2  velo = beyblade.Velo, acel = beyblade.Acel, pos = beyblade.Pos;
+            Vector2  velo = beyblade.Velo, acel = beyblade.Acel, pos1 = beyblade.Pos, pos2 = beybladeInimigo.Pos;
             Vector2 veloI = beybladeInimigo.Velo, acelI = beybladeInimigo.Acel;
 
             float xDist=x1-x2;
@@ -143,12 +142,15 @@ namespace beyblade
                     beybladeInimigo.aVelo = 0;
                 }
 
-                emissor = new Vector2(pos.X, pos.Y);
-                particulas.Add(new Particula(emissor));
-     
+
+                    emissor1 = new Vector2(pos1.X, pos1.Y);
+                    emissor2 = new Vector2(pos2.X, pos2.Y);
+                    particulas.Add(new Particula(emissor1));
+                    particulas.Add(new Particula(emissor2));
+              
+
             }
 
-            
             if (beyblade.aVelo == 0)
             {
                 velo.X = 0;

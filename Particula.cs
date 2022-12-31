@@ -12,6 +12,7 @@ namespace beyblade
     {
         protected Vector2 pos, velo, acel, gravidade;
         protected float lifeSpan;
+      
 
         protected float raio;
         protected SolidBrush brushBola;
@@ -21,27 +22,27 @@ namespace beyblade
 
         public Particula(Vector2 p)
         {
-            rnd = new Random();
-            pos = p;
-            velo = new Vector2(
-                (float)(rnd.NextDouble() * 12 - 6),
-                (float)(rnd.NextDouble() * -6)
-                );
+            for (int i = 0; i < 100; i++)
+            {
+                rnd = new Random();
+                pos = p;
+                velo = new Vector2(
+                    (float)(rnd.NextDouble() * 12 - 6),
+                    (float)(rnd.NextDouble() * -6)
+                    );
 
-            gravidade = new Vector2(0, 0.2f);
+                gravidade = new Vector2(0, 0.2f);
 
-            lifeSpan = 255;
+                lifeSpan = 255;
 
-            raio = 5;
-            brushBola = new SolidBrush(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
-            rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
-
-
+                raio = 5;
+                brushBola = new SolidBrush(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
+                rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
+            }
         }
 
         public void aplicaForca(Vector2 forca)
         {
-
             acel += Vector2.Divide(forca, lifeSpan);
         }
         public Boolean isDead()
@@ -52,7 +53,6 @@ namespace beyblade
         //virtual permite com que a subclasse de override a este metodo
         public virtual void move()
         {
-
             velo += acel;
             pos += velo;
             acel = gravidade;
@@ -61,11 +61,11 @@ namespace beyblade
 
         public virtual void draw(Graphics g)
         {
-            brushBola.Color = Color.FromArgb((int)lifeSpan, brushBola.Color);
-            g.ResetTransform();
-            g.TranslateTransform(pos.X, pos.Y);
-            g.FillEllipse(brushBola, rectBola);
-
+           
+                brushBola.Color = Color.FromArgb((int)lifeSpan, brushBola.Color);
+                g.ResetTransform();
+                g.TranslateTransform(pos.X, pos.Y);
+                g.FillEllipse(brushBola, rectBola);
         }
     }
 

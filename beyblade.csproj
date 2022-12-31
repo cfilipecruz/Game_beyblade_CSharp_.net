@@ -89,6 +89,7 @@
     <Compile Include="Arena.cs" />
     <Compile Include="Atractor.cs" />
     <Compile Include="Beyblade.cs" />
+    <Compile Include="Dadosloja.cs" />
     <Compile Include="FormStore.cs">
       <SubType>Form</SubType>
     </Compile>
