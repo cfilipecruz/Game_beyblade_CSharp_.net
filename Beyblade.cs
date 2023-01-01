@@ -15,6 +15,7 @@ namespace beyblade
     {
         Vector2 pos, velo, acel, gravidade;
         private float massa;
+        private float atrito = 0.2f;
 
         public float angle, aVelo;
 
@@ -75,6 +76,12 @@ namespace beyblade
         {
             acel += Vector2.Divide(forca, massa);
         }
+
+        public void aplicaAtrito(Vector2 forca)
+        {
+            acel += Vector2.Divide(forca, atrito);
+        }
+
         public void move()
         {
             angle += aVelo;

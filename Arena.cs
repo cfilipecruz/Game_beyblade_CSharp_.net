@@ -17,6 +17,7 @@ namespace beyblade
         Atractor atractor;
         private List<Particula> particulas;
         private int vencedor = 0;
+        private float atrito = 0.9f;
 
         private Vector2 emissor1;
         private Vector2 emissor2;
@@ -40,8 +41,6 @@ namespace beyblade
             get { return area; }
             set { area = value; }
         }
-
-      
 
         public Beyblade Jogador
         {
@@ -191,7 +190,9 @@ namespace beyblade
         {
            beyblade.aplicaForca(atractor.atract(beyblade));
            beybladeInimigo.aplicaForca(atractor.atract(beybladeInimigo));
-   
+            //beyblade.aplicaAtrito(atractor.atract(beyblade));
+            //beybladeInimigo.aplicaAtrito(atractor.atract(beybladeInimigo));
+
             colide(beyblade.Pos.X, beyblade.Pos.Y, beyblade.Raio, beybladeInimigo.Pos.X, beybladeInimigo.Pos.Y, beybladeInimigo.Raio);
 
             limitaLateral(beyblade);

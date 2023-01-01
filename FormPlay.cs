@@ -13,8 +13,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace beyblade
 {
-  
-
     public partial class FormPlay : Form
     {
         public static int massa;
@@ -44,8 +42,6 @@ namespace beyblade
             cb.Colors = new[] {  Color.Red, Color.Yellow,  Color.Green };
             timer1.Interval = 1;
             timer1.Enabled = false;
-
-           
 
         }
 
@@ -84,8 +80,10 @@ namespace beyblade
 
         private void desenhaTudo(Graphics g)
         {
+
             g.Clear(panelArena.BackColor);
             arena.draw(g);
+
         }
 
         private void panelArena_Paint(object sender, PaintEventArgs e)
@@ -96,10 +94,9 @@ namespace beyblade
 
         private void timerAnima_Tick(object sender, EventArgs e)
         {
-
             arena.move();
             reDesenha();
-            vencedor();
+            
             labelRaio.Text = arena.Jogador.aVelo.ToString() + " , " + arena.Jogador.Massa.ToString();
             labelInimigo.Text=arena.Inimigo.aVelo.ToString() +" , "+arena.Inimigo.Massa.ToString();
 
@@ -108,24 +105,6 @@ namespace beyblade
         private void vencedor()
         {
             ganhou = arena.Vencedor;
-
-            if (ganhou == 0)
-            {
-                LB_Vencedor.Visible = false;
-                LB_Vencedor.Text = "Sem vencedor";
-               
-            }
-            else if (ganhou == 1)
-            {
-                LB_Vencedor.Visible = true;
-                LB_Vencedor.Text = "Parabéns Venceste";
-
-            }
-            else if (ganhou == 2)
-            {
-                LB_Vencedor.Visible = true;
-                LB_Vencedor.Text = "Perdeste, Tenta novamente";
-            }
         }
 
         private void reDesenha()
@@ -142,7 +121,6 @@ namespace beyblade
         }
 
 
-
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             //arena.Jogador.aVelo = float.Parse(textBox1.Text);
@@ -153,7 +131,6 @@ namespace beyblade
             if (!timerAnima.Enabled)
             {
                 buttonPlay.Text = "Play";
-
             }
             {
                 buttonPlay.Visible = false;
@@ -238,7 +215,6 @@ namespace beyblade
                 }
             }
             pictureBox1.Invalidate();
-        
     }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -263,12 +239,10 @@ namespace beyblade
                 if (RBA_10.Checked)
                 {
                     valorDiv = 10;
-              
                 }
                 if (RBA_25.Checked)
                 {
                     valorDiv = 4;
-                 
                 }
                 if (RBA_50.Checked)
                 {
@@ -290,6 +264,7 @@ namespace beyblade
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             restart();
+
         }
 
         private void restart()
