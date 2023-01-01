@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Numerics;
 using System.Security.Cryptography;
 
@@ -15,6 +16,7 @@ namespace beyblade
         Beyblade beybladeInimigo;
         Atractor atractor;
         private List<Particula> particulas;
+        private int vencedor = 0;
 
         private Vector2 emissor1;
         private Vector2 emissor2;
@@ -23,6 +25,8 @@ namespace beyblade
         {
             area = s;
             rnd = new Random();
+           
+        
             beyblade = new Beyblade();
             beybladeInimigo=new Beyblade();
             iniciaBeyblade();
@@ -36,6 +40,9 @@ namespace beyblade
             get { return area; }
             set { area = value; }
         }
+
+      
+
         public Beyblade Jogador
         {
             get { return beyblade; }
@@ -65,6 +72,7 @@ namespace beyblade
             beyblade.Velo = velo;
             beybladeInimigo.Pos = posI;
             beybladeInimigo.Velo= veloI;
+            vencedor = 0;
         }
 
         public void limitaLateral(Beyblade b)
@@ -100,13 +108,15 @@ namespace beyblade
         }
         public void colide(float x1, float y1, float r1, float x2, float y2, float r2)
         {
-            Vector2  velo = beyblade.Velo, acel = beyblade.Acel, pos1 = beyblade.Pos, pos2 = beybladeInimigo.Pos;
+            Vector2 velo = beyblade.Velo, acel = beyblade.Acel;
             Vector2 veloI = beybladeInimigo.Velo, acelI = beybladeInimigo.Acel;
+           
 
             float xDist=x1-x2;
             float yDist=y1-y2;
             float dist =(float)Math.Sqrt((xDist * xDist) +(yDist*yDist));
 
+            Vector2 pos1 = beyblade.Pos, pos2 = beybladeInimigo.Pos;
 
             if (r1+r2 >dist)
             {
@@ -142,28 +152,28 @@ namespace beyblade
                     beybladeInimigo.aVelo = 0;
                 }
 
-
-                    emissor1 = new Vector2(pos1.X, pos1.Y);
-                    emissor2 = new Vector2(pos2.X, pos2.Y);
+                    emissor1 = new Vector2((pos1.X + pos2.X) / 2, (pos1.Y + pos2.Y) / 2);
+                    emissor2 = new Vector2((pos2.X + pos1.X) / 2, (pos2.Y + pos1.Y) / 2);
                     particulas.Add(new Particula(emissor1));
                     particulas.Add(new Particula(emissor2));
-              
-
+                
             }
 
-            if (beyblade.aVelo == 0)
+            if (beyblade.aVelo <= 5)
             {
                 velo.X = 0;
                 velo.Y = 0;
                 acel.X = 0;
                 acel.Y = 0;
+                vencedor = 2;
             }
-            if(beybladeInimigo.aVelo == 0)
+            if(beybladeInimigo.aVelo <= 5)
             {
                 veloI.X = 0;
                 veloI.Y = 0;
                 acelI.X = 0;
                 acelI.Y = 0;
+               vencedor = 1;
             }
 
             beybladeInimigo.Acel = acelI;
@@ -171,7 +181,12 @@ namespace beyblade
             beyblade.Acel = acel;
             beyblade.Velo = velo;
         }
-        
+
+        public int Vencedor
+        {
+            get { return vencedor; }
+            set { vencedor = value; }
+        }
         public void move()
         {
            beyblade.aplicaForca(atractor.atract(beyblade));

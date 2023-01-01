@@ -62,6 +62,7 @@
             this.LB_Massa = new System.Windows.Forms.Label();
             this.LB_Pontos = new System.Windows.Forms.Label();
             this.Timer_Particulas = new System.Windows.Forms.Timer(this.components);
+            this.LB_Vencedor = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -144,7 +145,7 @@
             // panelArena
             // 
             this.panelArena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelArena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelArena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panelArena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelArena.Location = new System.Drawing.Point(636, 26);
@@ -156,7 +157,7 @@
             // 
             // timerAnima
             // 
-            this.timerAnima.Interval = 30;
+            this.timerAnima.Interval = 20;
             this.timerAnima.Tick += new System.EventHandler(this.timerAnima_Tick);
             // 
             // labelRaio
@@ -427,12 +428,25 @@
             // 
             this.Timer_Particulas.Interval = 2;
             // 
+            // LB_Vencedor
+            // 
+            this.LB_Vencedor.AutoSize = true;
+            this.LB_Vencedor.Enabled = false;
+            this.LB_Vencedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Vencedor.Location = new System.Drawing.Point(314, 327);
+            this.LB_Vencedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Vencedor.Name = "LB_Vencedor";
+            this.LB_Vencedor.Size = new System.Drawing.Size(314, 38);
+            this.LB_Vencedor.TabIndex = 25;
+            this.LB_Vencedor.Text = "Vencedor: Nenhum";
+            // 
             // FormPlay
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1422, 803);
+            this.Controls.Add(this.LB_Vencedor);
             this.Controls.Add(this.LB_Pontos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.RB_60);
@@ -505,5 +519,6 @@
         private System.Windows.Forms.Label LB_Massa;
         private System.Windows.Forms.Label LB_Pontos;
         private System.Windows.Forms.Timer Timer_Particulas;
+        private System.Windows.Forms.Label LB_Vencedor;
     }
 }

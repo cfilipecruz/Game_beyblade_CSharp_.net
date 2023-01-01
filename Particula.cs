@@ -22,8 +22,7 @@ namespace beyblade
 
         public Particula(Vector2 p)
         {
-            for (int i = 0; i < 100; i++)
-            {
+
                 rnd = new Random();
                 pos = p;
                 velo = new Vector2(
@@ -33,9 +32,10 @@ namespace beyblade
 
                 gravidade = new Vector2(0, 0.2f);
 
-                lifeSpan = 255;
+                lifeSpan = 200;
 
-                raio = 5;
+                raio = 3;
+            for(int i = 0; i < 10000; i++) { 
                 brushBola = new SolidBrush(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
                 rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
             }
@@ -61,7 +61,6 @@ namespace beyblade
 
         public virtual void draw(Graphics g)
         {
-           
                 brushBola.Color = Color.FromArgb((int)lifeSpan, brushBola.Color);
                 g.ResetTransform();
                 g.TranslateTransform(pos.X, pos.Y);

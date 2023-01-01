@@ -29,7 +29,7 @@ namespace beyblade
         {
             rnd = new Random();
             angle= 0;
-            aVelo = 20;
+            aVelo = 40;
 
             massa = 1;
             raio = 40;

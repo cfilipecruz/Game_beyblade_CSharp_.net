@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace beyblade
 {
   
+
     public partial class FormPlay : Form
     {
         public static int massa;
         public static int rotacao;
         private Arena arena;
+        private int ganhou;
         private int barJump = 5;
         private bool direction = true;
         private int barWidth = 5;
         private int position = 50;
         private ColorBlend cb = new ColorBlend();
- 
-
 
         int valorDiv = 5;
         double percentage;
@@ -44,6 +45,8 @@ namespace beyblade
             timer1.Interval = 1;
             timer1.Enabled = false;
 
+           
+
         }
 
         private void FormPlay_Load(object sender, EventArgs e)
@@ -54,7 +57,10 @@ namespace beyblade
             LB_Aceleracao.Text = "Aceleração: " + rotacao;
 
             arena.Inimigo.Massa = massa;
-           
+            arena.Inimigo.aVelo = rotacao;
+
+            LB_Vencedor.Visible = false;
+
         }
 
         private void LB_GoBack_Click(object sender, EventArgs e)
@@ -93,13 +99,33 @@ namespace beyblade
 
             arena.move();
             reDesenha();
+            vencedor();
             labelRaio.Text = arena.Jogador.aVelo.ToString() + " , " + arena.Jogador.Massa.ToString();
             labelInimigo.Text=arena.Inimigo.aVelo.ToString() +" , "+arena.Inimigo.Massa.ToString();
 
-            //if (arena.Jogador.aVelo == 0)
-            //{
-            //    timerAnima.Stop();
-            //}
+        }
+
+        private void vencedor()
+        {
+            ganhou = arena.Vencedor;
+
+            if (ganhou == 0)
+            {
+                LB_Vencedor.Visible = false;
+                LB_Vencedor.Text = "Sem vencedor";
+               
+            }
+            else if (ganhou == 1)
+            {
+                LB_Vencedor.Visible = true;
+                LB_Vencedor.Text = "Parabéns Venceste";
+
+            }
+            else if (ganhou == 2)
+            {
+                LB_Vencedor.Visible = true;
+                LB_Vencedor.Text = "Perdeste, Tenta novamente";
+            }
         }
 
         private void reDesenha()
@@ -132,7 +158,6 @@ namespace beyblade
             {
                 buttonPlay.Visible = false;
             }
-
 
             if (RB_10.Checked)
             {
