@@ -17,7 +17,6 @@ namespace beyblade
         Atractor atractor;
         private List<Particula> particulas;
         private int vencedor = 0;
-        private float atrito = 0.9f;
 
         private Vector2 emissor1;
         private Vector2 emissor2;
@@ -71,7 +70,7 @@ namespace beyblade
             beyblade.Velo = velo;
             beybladeInimigo.Pos = posI;
             beybladeInimigo.Velo= veloI;
-            vencedor = 0;
+            //vencedor = 0;
         }
 
         public void limitaLateral(Beyblade b)
@@ -102,6 +101,7 @@ namespace beyblade
                 pos.Y = area.Height - b.Raio;
                 aVelo -= 1;
             }
+            b.aVelo = aVelo;
             b.Pos = pos;
             b.Velo = velo;
         }
@@ -164,7 +164,7 @@ namespace beyblade
                 velo.Y = 0;
                 acel.X = 0;
                 acel.Y = 0;
-                vencedor = 2;
+                //vencedor = 2;
             }
             if(beybladeInimigo.aVelo <= 5)
             {
@@ -172,7 +172,7 @@ namespace beyblade
                 veloI.Y = 0;
                 acelI.X = 0;
                 acelI.Y = 0;
-               vencedor = 1;
+               //vencedor = 1;
             }
 
             beybladeInimigo.Acel = acelI;
@@ -186,6 +186,18 @@ namespace beyblade
             get { return vencedor; }
             set { vencedor = value; }
         }
+
+        public void verificaVencedor()
+        {
+            if (beyblade.aVelo <= 0)
+            {
+                vencedor= 2;
+            }
+            if(beybladeInimigo.aVelo <= 0)
+            {
+                vencedor= 1;
+            }
+        }
         public void move()
         {
            beyblade.aplicaForca(atractor.atract(beyblade));
@@ -194,7 +206,7 @@ namespace beyblade
             //beybladeInimigo.aplicaAtrito(atractor.atract(beybladeInimigo));
 
             colide(beyblade.Pos.X, beyblade.Pos.Y, beyblade.Raio, beybladeInimigo.Pos.X, beybladeInimigo.Pos.Y, beybladeInimigo.Raio);
-
+            verificaVencedor();
             limitaLateral(beyblade);
             limitaLateral(beybladeInimigo);
 
@@ -205,6 +217,7 @@ namespace beyblade
                 if (particulas[i].isDead())
                     particulas.RemoveAt(i);
             }
+
 
             beybladeInimigo.move();
             beyblade.move();
