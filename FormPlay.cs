@@ -107,8 +107,6 @@ namespace beyblade
         private void vencedor()
         {
             ganhou = arena.Vencedor;
-
-
         }
 
         private void reDesenha()
