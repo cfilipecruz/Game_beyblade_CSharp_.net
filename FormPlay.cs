@@ -57,6 +57,8 @@ namespace beyblade
 
             LB_Vencedor.Visible = false;
 
+            
+
         }
 
         private void LB_GoBack_Click(object sender, EventArgs e)
@@ -105,6 +107,8 @@ namespace beyblade
         private void vencedor()
         {
             ganhou = arena.Vencedor;
+
+
         }
 
         private void reDesenha()
