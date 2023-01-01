@@ -33,7 +33,7 @@ namespace beyblade
             aVelo = 40;
 
             massa = 1;
-            raio = 40;
+            raio = 55;
             brushBola = new SolidBrush(Color.Aquamarine);
             pen= new Pen(Color.Black,3);
             rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
@@ -77,10 +77,6 @@ namespace beyblade
             acel += Vector2.Divide(forca, massa);
         }
 
-        public void aplicaAtrito(Vector2 forca)
-        {
-            acel += Vector2.Divide(forca, atrito);
-        }
 
         public void move()
         {
@@ -88,6 +84,13 @@ namespace beyblade
             velo += acel;
             pos += velo;
             acel = gravidade;
+
+            if (aVelo > 0)
+            {
+                aVelo -= (float)0.01;
+            }
+            
+
         }
 
         public void draw(Graphics g)
@@ -98,6 +101,7 @@ namespace beyblade
 
             g.FillEllipse(brushBola, rectBola);
             g.DrawEllipse(pen, -raio, 0, raio*2,0);
+            //g.DrawEllipse(pen, 0, -raio,0, raio * 2);
 
         }
 

@@ -96,7 +96,7 @@ namespace beyblade
         {
             arena.move();
             reDesenha();
-            
+            vencedor();
             labelRaio.Text = arena.Jogador.aVelo.ToString() + " , " + arena.Jogador.Massa.ToString();
             labelInimigo.Text=arena.Inimigo.aVelo.ToString() +" , "+arena.Inimigo.Massa.ToString();
 
@@ -105,6 +105,23 @@ namespace beyblade
         private void vencedor()
         {
             ganhou = arena.Vencedor;
+            if (ganhou == 0)
+            {
+                // System.Windows.Forms.MessageBox.Show("");
+            }
+            else if (ganhou == 1)
+            {
+                timerAnima.Stop();
+                MessageBox.Show("Venceste");
+                
+
+            }
+            else if (ganhou == 2)
+            {
+                timerAnima.Stop();
+                MessageBox.Show("Perdeste");
+               
+            }
         }
 
         private void reDesenha()
@@ -269,9 +286,14 @@ namespace beyblade
 
         private void restart()
         {
+           //ganhou = 0;
+           arena.Vencedor = 0;
            arena.iniciaBeyblade();
            timerAnima.Stop();
-           panelArena.Invalidate();           
+           panelArena.Invalidate();
+
+            
+           arena.Inimigo.aVelo = rotacao;
            buttonPlay.Visible = true;
         }
 

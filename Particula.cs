@@ -34,7 +34,7 @@ namespace beyblade
 
                 lifeSpan = 200;
 
-                raio = 3;
+                raio =6 ;
             for(int i = 0; i < 10000; i++) { 
                 brushBola = new SolidBrush(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
                 rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
@@ -65,6 +65,7 @@ namespace beyblade
                 g.ResetTransform();
                 g.TranslateTransform(pos.X, pos.Y);
                 g.FillEllipse(brushBola, rectBola);
+
         }
     }
 
