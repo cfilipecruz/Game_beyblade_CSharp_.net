@@ -21,14 +21,22 @@ namespace beyblade
         public FormMain()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
+           
+
+            new System.Threading.Thread(() => {
+                var c = new System.Windows.Media.MediaPlayer();
+                c.Open(new System.Uri(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\soundtrack.wav"));
+                c.Play();
+            }).Start();
+
+            System.Threading.Thread.Sleep(500);
+           
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
-            SoundPlayer music = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\soundtrack.wav");
-            music.Play();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {

@@ -36,7 +36,7 @@ namespace beyblade
             rotacao = FormNiveis.rotacao;
 
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
+        
             arena = new Arena(panelArena.DisplayRectangle.Size);
 
             cb.Positions = new[] { 0, 0.85f, 1 };
@@ -48,6 +48,8 @@ namespace beyblade
         private void FormPlay_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
+            this.FormBorderStyle = FormBorderStyle.None;
+
             LB_Massa.Text = "Massa: " + massa;
             LB_Aceleracao.Text = "Aceleração: " + rotacao;
 
@@ -99,6 +101,10 @@ namespace beyblade
 
         private void vencedor()
         {
+            string retryMessage = "Queres jogar novamente?";
+            string losingMessage = "Ups, Perdeste";
+            string winMessage = "Parabéns, Ganhaste";
+       
             ganhou = arena.Vencedor;
             if (ganhou == 0)
             {
@@ -109,15 +115,35 @@ namespace beyblade
                 timerAnima.Stop();
                 SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\people.wav");
                 soundclick.Play();
-                MessageBox.Show("Venceste");
+                MessageBoxButtons buttons = MessageBoxButtons.RetryCancel;
+                DialogResult result = MessageBox.Show(winMessage, retryMessage, buttons);
+                if (result == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    restart();
+                }
             }
             else if (ganhou == 2)
             {
                 timerAnima.Stop();
                 SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\off.wav");
                 soundclick.Play();
-                MessageBox.Show("Perdeste");
+                MessageBoxButtons buttons = MessageBoxButtons.RetryCancel;
+                DialogResult result = MessageBox.Show(losingMessage, retryMessage, buttons);
+                if (result == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    restart();
+                }
             }
+
+          
         }
 
         private void reDesenha()

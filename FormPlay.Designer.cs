@@ -103,7 +103,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 40);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -145,11 +145,12 @@
             // 
             // panelArena
             // 
-            this.panelArena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelArena.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panelArena.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelArena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panelArena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelArena.Location = new System.Drawing.Point(636, 13);
+            this.panelArena.Location = new System.Drawing.Point(635, 13);
             this.panelArena.Margin = new System.Windows.Forms.Padding(4);
             this.panelArena.Name = "panelArena";
             this.panelArena.Size = new System.Drawing.Size(765, 765);
