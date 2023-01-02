@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Media;
 using System.Numerics;
 using System.Security.Cryptography;
 
@@ -19,7 +20,6 @@ namespace beyblade
         private int vencedor = 0;
 
         private Vector2 emissor1;
-        private Vector2 emissor2;
 
         public Arena(Size s)
         {
@@ -57,15 +57,15 @@ namespace beyblade
         {
             Vector2 pos=beyblade.Pos, velo=beyblade.Velo;
             Vector2 posI = beybladeInimigo.Pos, veloI = beybladeInimigo.Velo;
-            float raio = beyblade.Raio;
-            pos.X = 0 + raio * 2;
-            pos.Y =area.Height / 2;
-            posI.X= area.Width-raio*2;
-            posI.Y= area.Height / 2;
+            int raio = (int)beyblade.Raio;
+            pos.X = rnd.Next(raio * 2, area.Width / 2 - raio * 2);
+            pos.Y = rnd.Next(raio * 2, area.Height - raio * 2); 
+            posI.X = rnd.Next((area.Width / 2) + (raio * 2) , area.Width - (raio*2));
+            posI.Y = rnd.Next(raio * 2, area.Height - (raio * 2));
             velo.X = (float)rnd.NextDouble() * 10 - 5;
             velo.Y = (float)rnd.NextDouble() * 10 - 5;
             veloI.X = (float)rnd.NextDouble() * 10 - 5;
-            veloI.Y= (float)rnd.NextDouble() * 10 - 5;
+            veloI.Y = (float)rnd.NextDouble() * 10 - 5;
             beyblade.Pos = pos;
             beyblade.Velo = velo;
             beybladeInimigo.Pos = posI;
@@ -109,7 +109,9 @@ namespace beyblade
         {
             Vector2 velo = beyblade.Velo, acel = beyblade.Acel;
             Vector2 veloI = beybladeInimigo.Velo, acelI = beybladeInimigo.Acel;
-           
+
+            SoundPlayer collide = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\grindersmall.wav");
+            collide.Play();
 
             float xDist=x1-x2;
             float yDist=y1-y2;
@@ -124,22 +126,22 @@ namespace beyblade
                 veloI.X *= -1;
                 veloI.Y *= -1;
 
-                if (beyblade.Massa> beybladeInimigo.Massa && beyblade.aVelo > beybladeInimigo.aVelo)
+                if (beyblade.Massa > beybladeInimigo.Massa && beyblade.aVelo > beybladeInimigo.aVelo)
                 {
-                        beybladeInimigo.aVelo -= 3;        
+                        beybladeInimigo.aVelo -= 2;        
                 }
                 if(beyblade.Massa > beybladeInimigo.Massa && beybladeInimigo.aVelo > beyblade.aVelo)
                 {
-                        beybladeInimigo.aVelo -= 2 ;
-                        beyblade.aVelo -= 1;
+                        beybladeInimigo.aVelo -= 1 ;
+                        beyblade.aVelo -= 0.5f;
                 }
                 if(beybladeInimigo.Massa >= beyblade.Massa && beybladeInimigo.aVelo >= beyblade.aVelo){
-                        beyblade.aVelo -= 3;
+                        beyblade.aVelo -= 2;
                 }
                 if(beybladeInimigo.Massa >= beyblade.Massa && beyblade.aVelo >= beybladeInimigo.aVelo)
                 {
-                        beybladeInimigo.aVelo -= 1;
-                        beyblade.aVelo -= 2;           
+                        beybladeInimigo.aVelo -= 0.5f;
+                        beyblade.aVelo -= 1;           
                 }
 
                 if (beyblade.aVelo < 0)
@@ -151,11 +153,16 @@ namespace beyblade
                     beybladeInimigo.aVelo = 0;
                 }
 
-                    emissor1 = new Vector2((pos1.X + pos2.X) / 2, (pos1.Y + pos2.Y) / 2);
-                    emissor2 = new Vector2((pos2.X + pos1.X) / 2, (pos2.Y + pos1.Y) / 2);
+                for (int i=1; i<30; i++)
+                {
+                    emissor1 = new Vector2((pos1.X + pos2.X) / 2 + rnd.Next(i), (pos1.Y + pos2.Y) / 2 + rnd.Next(i));
                     particulas.Add(new Particula(emissor1));
-                    particulas.Add(new Particula(emissor2));
-                
+                }
+                  //  emissor1 = new Vector2((pos1.X + pos2.X) / 2, (pos1.Y + pos2.Y) / 2);
+                  //  emissor2 = new Vector2((pos2.X + pos1.X) / 2, (pos2.Y + pos1.Y) / 2);
+                  //  particulas.Add(new Particula(emissor1));
+                  //  particulas.Add(new Particula(emissor2));
+
             }
 
             if (beyblade.aVelo <= 5)
@@ -210,7 +217,6 @@ namespace beyblade
             limitaLateral(beyblade);
             limitaLateral(beybladeInimigo);
 
-
             for (int i = particulas.Count - 1; i >= 0; i--)
             {
                 particulas[i].move();
@@ -218,10 +224,8 @@ namespace beyblade
                     particulas.RemoveAt(i);
             }
 
-
             beybladeInimigo.move();
             beyblade.move();
-
         }
         public void draw(Graphics g)
         {
@@ -234,10 +238,6 @@ namespace beyblade
             {
                 b.draw(g);
             }
-
         }
-
-
     }
-
 }

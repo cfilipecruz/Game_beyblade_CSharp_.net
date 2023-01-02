@@ -30,15 +30,13 @@ namespace beyblade
                     (float)(rnd.NextDouble() * -6)
                     );
 
-                gravidade = new Vector2(0, 0.2f);
+                gravidade = new Vector2(0, 0.0f);
 
-                lifeSpan = 200;
+                lifeSpan = 60;
 
-                raio =6 ;
-            for(int i = 0; i < 10000; i++) { 
-                brushBola = new SolidBrush(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
-                rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 2);
-            }
+                raio = 6;
+                brushBola = new SolidBrush(Color.FromArgb(rnd.Next(230,255), rnd.Next(240,255), 0));
+                rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 10);
         }
 
         public void aplicaForca(Vector2 forca)
@@ -64,8 +62,7 @@ namespace beyblade
                 brushBola.Color = Color.FromArgb((int)lifeSpan, brushBola.Color);
                 g.ResetTransform();
                 g.TranslateTransform(pos.X, pos.Y);
-                g.FillEllipse(brushBola, rectBola);
-
+                g.FillRectangle(brushBola, rectBola);
         }
     }
 

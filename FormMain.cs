@@ -41,7 +41,7 @@ namespace beyblade
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-           // soundclick.Play();
+            soundclick.Play();
             Application.Exit();
        
         }
@@ -49,14 +49,14 @@ namespace beyblade
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-           // soundclick.Play();
+            soundclick.Play();
         }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
 
-            // SoundPlayer soundclick = new SoundPlayer(click);
-           //  soundclick.Play();
+             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+             soundclick.Play();
 
              FormNiveis formNiveis = new FormNiveis();
              formNiveis.Show();
@@ -67,7 +67,8 @@ namespace beyblade
         private void LB_Rules_Click_1(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
-           // soundclick.Play();
+            soundclick.Play();
+
             FormRules formRules = new FormRules();
             formRules.Show();
             this.Hide();
@@ -76,11 +77,11 @@ namespace beyblade
         private void label2_MouseHover(object sender, EventArgs e)
         {
 
-            SoundPlayer soundPlay = new SoundPlayer(Path.Combine(assetPath, "mouseHoover.mp3"));
-           // soundPlay.Play();
+            SoundPlayer soundPlay = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            soundPlay.Play();
+
             label2.BorderStyle = BorderStyle.FixedSingle; 
             label2.BackColor = Color.FromArgb(100, 255, 255, 255);
-          
           
         }
 
@@ -89,7 +90,7 @@ namespace beyblade
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
             LB_Rules.BorderStyle = BorderStyle.FixedSingle;
             LB_Rules.BackColor = Color.FromArgb(100, 255, 255, 255);
-           //  soundhover.Play();
+             soundhover.Play();
 
         }
 
@@ -108,13 +109,13 @@ namespace beyblade
         private void fileToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-          //  soundhover.Play();
+            soundhover.Play();
         }
 
         private void exitToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
-          //  soundhover.Play();
+            soundhover.Play();
         }
 
         private void label1_Click(object sender, EventArgs e)

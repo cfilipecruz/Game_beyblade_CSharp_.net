@@ -19,9 +19,9 @@ namespace beyblade
 
         public Atractor(Vector2 location)
         {
-            massa = 300;
+            massa = 500;
             pos = location;
-            G = 0.5f;
+            G = 0.4f;
 
             raio = 100;
             brushAtractor = new SolidBrush(Color.Brown);

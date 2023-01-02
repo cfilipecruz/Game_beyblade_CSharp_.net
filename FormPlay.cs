@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,12 +43,10 @@ namespace beyblade
             cb.Colors = new[] {  Color.Red, Color.Yellow,  Color.Green };
             timer1.Interval = 1;
             timer1.Enabled = false;
-
         }
 
         private void FormPlay_Load(object sender, EventArgs e)
         {
-
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
             LB_Massa.Text = "Massa: " + massa;
             LB_Aceleracao.Text = "Aceleração: " + rotacao;
@@ -56,9 +55,6 @@ namespace beyblade
             arena.Inimigo.aVelo = rotacao;
 
             LB_Vencedor.Visible = false;
-
-            
-
         }
 
         private void LB_GoBack_Click(object sender, EventArgs e)
@@ -82,10 +78,8 @@ namespace beyblade
 
         private void desenhaTudo(Graphics g)
         {
-
             g.Clear(panelArena.BackColor);
             arena.draw(g);
-
         }
 
         private void panelArena_Paint(object sender, PaintEventArgs e)
@@ -101,7 +95,6 @@ namespace beyblade
             vencedor();
             labelRaio.Text = arena.Jogador.aVelo.ToString() + " , " + arena.Jogador.Massa.ToString();
             labelInimigo.Text=arena.Inimigo.aVelo.ToString() +" , "+arena.Inimigo.Massa.ToString();
-
         }
 
         private void vencedor()
@@ -114,15 +107,16 @@ namespace beyblade
             else if (ganhou == 1)
             {
                 timerAnima.Stop();
+                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\oof.wav");
+                soundclick.Play();
                 MessageBox.Show("Venceste");
-                
-
             }
             else if (ganhou == 2)
             {
                 timerAnima.Stop();
+                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\oof.wav");
+                soundclick.Play();
                 MessageBox.Show("Perdeste");
-               
             }
         }
 
@@ -142,9 +136,11 @@ namespace beyblade
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+
             //arena.Jogador.aVelo = float.Parse(textBox1.Text);
             arena.Jogador.aVelo = (float)percentage;
-
 
             timerAnima.Enabled = !timerAnima.Enabled;
             if (!timerAnima.Enabled)
@@ -183,26 +179,21 @@ namespace beyblade
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
             Application.Exit();
         }
 
         private void fileToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
-
-        }
-
-        private void fileToolStripMenuItem_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            soundhover.Play();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
             button1.Enabled = false;
             timer1.Enabled = true;
         }
@@ -253,6 +244,9 @@ namespace beyblade
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
 
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+
             if (timer1.Enabled && e.Button == MouseButtons.Left)
             {
                 if (RBA_10.Checked)
@@ -282,8 +276,9 @@ namespace beyblade
 
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
             restart();
-
         }
 
         private void restart()
@@ -294,33 +289,37 @@ namespace beyblade
            timerAnima.Stop();
            panelArena.Invalidate();
 
-            
            arena.Inimigo.aVelo = rotacao;
            buttonPlay.Visible = true;
         }
 
-        private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void labelInimigo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelRaio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LB_Massa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LB_Aceleracao_Click(object sender, EventArgs e)
+        {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+        }
+
+        private void LB_GoBack_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            LB_GoBack.BorderStyle = BorderStyle.FixedSingle;
+            LB_GoBack.BackColor = Color.FromArgb(100, 255, 255, 255);
+            soundhover.Play();
+        }
+
+        private void restartToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer soundhover = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\mouseHoover.wav");
+            soundhover.Play();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
+            soundclick.Play();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
