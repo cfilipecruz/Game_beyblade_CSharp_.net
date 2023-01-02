@@ -32,11 +32,11 @@ namespace beyblade
 
                 gravidade = new Vector2(0, 0.0f);
 
-                lifeSpan = 60;
+                lifeSpan = 70;
 
                 raio = 6;
                 brushBola = new SolidBrush(Color.FromArgb(rnd.Next(230,255), rnd.Next(240,255), 0));
-                rectBola = new RectangleF(-raio, -raio, raio * 2, raio * 10);
+                rectBola = new RectangleF(-raio, -raio, raio*2, raio * 5);
         }
 
         public void aplicaForca(Vector2 forca)

@@ -18,12 +18,6 @@ namespace beyblade
     public partial class FormMain : Form
     {
 
-        Stream hoover = Assembly.GetExecutingAssembly().GetManifestResourceStream("Assets.Sounds.menuHoover.mp3");
-
-        static string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        string assetPath = Path.Combine(appDirectory, "Assets", "Sounds");
-       
-     
         public FormMain()
         {
             InitializeComponent();
@@ -32,18 +26,15 @@ namespace beyblade
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //FormBorderStyle = FormBorderStyle.None;           //Retirar as bordas da janela, Clicar f10
             WindowState = FormWindowState.Maximized;            //Colocar A janela em FullScreen
-           //SoundPlayer soundtrack = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\soundtrack.wav");
-            //soundtrack.PlayLooping();
-            //MenuStrip.BackColor = Color.Transparent;
+            SoundPlayer music = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\soundtrack.wav");
+            music.Play();
         }
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\click.mp3");
             soundclick.Play();
             Application.Exit();
-       
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

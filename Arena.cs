@@ -5,7 +5,6 @@ using System.Drawing.Text;
 using System.Media;
 using System.Numerics;
 using System.Security.Cryptography;
-using System.Windows.Media;
 
 namespace beyblade
 {
@@ -111,8 +110,6 @@ namespace beyblade
             Vector2 velo = beyblade.Velo, acel = beyblade.Acel;
             Vector2 veloI = beybladeInimigo.Velo, acelI = beybladeInimigo.Acel;
 
-           
-
             float xDist=x1-x2;
             float yDist=y1-y2;
             float dist =(float)Math.Sqrt((xDist * xDist) +(yDist*yDist));
@@ -159,8 +156,8 @@ namespace beyblade
                     particulas.Add(new Particula(emissor1));
                 }
 
-              //  SoundPlayer collide = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\grindersmall.wav");
-              //  collide.Play();
+                SoundPlayer collide = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\grindersmall.wav");
+                collide.Play();
                 //  emissor1 = new Vector2((pos1.X + pos2.X) / 2, (pos1.Y + pos2.Y) / 2);
                 //  emissor2 = new Vector2((pos2.X + pos1.X) / 2, (pos2.Y + pos1.Y) / 2);
                 //  particulas.Add(new Particula(emissor1));

@@ -107,14 +107,14 @@ namespace beyblade
             else if (ganhou == 1)
             {
                 timerAnima.Stop();
-                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\oof.wav");
+                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\people.wav");
                 soundclick.Play();
                 MessageBox.Show("Venceste");
             }
             else if (ganhou == 2)
             {
                 timerAnima.Stop();
-                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\oof.wav");
+                SoundPlayer soundclick = new SoundPlayer(@"D:\Escola\Licenciatura\4º Ano\1º Semestre\Progig\Projeto\beyblade\Assets\Sounds\off.wav");
                 soundclick.Play();
                 MessageBox.Show("Perdeste");
             }
@@ -150,7 +150,6 @@ namespace beyblade
             {
                 buttonPlay.Visible = false;
             }
-
             if (RB_10.Checked)
             {
                 arena.Jogador.Massa = 10;

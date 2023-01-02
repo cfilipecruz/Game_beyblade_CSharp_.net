@@ -172,7 +172,8 @@
     <Content Include="Assets\Sounds\menuHoover.mp3" />
     <Content Include="Assets\Sounds\mouseHoover.mp3" />
     <Content Include="Assets\Sounds\mouseHoover.wav" />
-    <Resource Include="Assets\Sounds\oof.wav" />
+    <Content Include="Assets\Sounds\off.wav" />
+    <Content Include="Assets\Sounds\people.wav" />
     <Content Include="Assets\Sounds\song1.wav" />
     <Content Include="Assets\Sounds\sound.mp3" />
     <Content Include="Assets\Sounds\soundtrack.wav" />
